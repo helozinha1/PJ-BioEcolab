@@ -1,0 +1,144 @@
+/*
+  entrevista.css
+
+  Este arquivo contém estilos específicos para a página de Entrevista (entrevista.html).
+  Ele é carregado APÓS o style.css global, permitindo definir layouts e estilos únicos
+  para as seções desta página, mantendo a consistência visual geral.
+*/
+
+/* --- Estilo para a Seção Hero da Página de Entrevista --- */
+.page-hero-entrevista {
+    /* Fundo verde vibrante para o hero da página de entrevista */
+    background: var(--gradient-medium-green-bg); 
+    background-size: cover;
+    background-position: center;
+    /* O hero-overlay e hero-content são estilos globais do style.css */
+}
+
+/* --- Estilos para a Seção de Conteúdo da Entrevista (entrevista-content-section) --- */
+.entrevista-content-section {
+    background-color: var(--color-white); /* Fundo branco para garantir contraste */
+    border-radius: var(--border-radius-main);
+    box-shadow: var(--box-shadow-main);
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border: 1px solid var(--color-border);
+}
+
+/* Títulos e descrições específicos para a página de entrevista */
+.entrevista-section-title {
+    font-family: var(--font-heading);
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--color-dark-green); /* Títulos em verde escuro */
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+.entrevista-section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--color-primary-green);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.entrevista-description {
+    font-size: 1.1rem;
+    color: var(--color-text-medium);
+    max-width: 850px;
+    margin: 0 auto 30px;
+    text-align: justify;
+}
+
+/* --- Estilo para o Wrapper do Vídeo (video-wrapper) --- */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporção 16:9 (altura/largura) */
+    height: 0;
+    overflow: hidden;
+    max-width: 900px; /* Largura máxima do vídeo */
+    margin: 40px auto; /* Centraliza o vídeo */
+    border-radius: var(--border-radius-main);
+    box-shadow: var(--box-shadow-main);
+    background: var(--gradient-dark-green-bg); /* Fundo verde escuro para o player */
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; /* Remove a borda padrão do iframe */
+}
+
+/* Título de subseção (ex: "Interessado em mais projetos?") */
+.subsection-title {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--color-dark-green);
+    margin-bottom: 15px;
+}
+
+/* --- Responsividade para entrevista.css --- */
+@media (max-width: 992px) {
+    .entrevista-section-title {
+        font-size: 2.2rem;
+    }
+    .entrevista-description {
+        font-size: 1rem;
+    }
+    .video-wrapper {
+        max-width: 700px; /* Reduz a largura máxima do vídeo em tablets */
+    }
+    .subsection-title {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .entrevista-section-title {
+        font-size: 1.8rem;
+    }
+    .entrevista-description {
+        font-size: 0.9rem;
+    }
+    .video-wrapper {
+        max-width: 100%; /* Vídeo ocupa a largura total do container */
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 0; /* Remove border-radius em mobile para telas cheias */
+    }
+    .subsection-title {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .entrevista-content-section {
+        padding: 30px 15px;
+    }
+    .entrevista-section-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    .entrevista-section-title::after {
+        width: 40px;
+    }
+    .entrevista-description {
+        font-size: 0.85rem;
+        margin-bottom: 20px;
+    }
+    .video-wrapper {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    .subsection-title {
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Analisadores Ambientais</title>
+    <link rel="stylesheet" href="css/analizador.css">
+</head>
+<body>
+    <header>
+        <h1>🌱 Analisadores Ambientais 🌍</h1>
+        <p>Entenda seu impacto e a situação ambiental do Brasil.</p>
+    </header>
+
+    <main>
+        <section id="analisador-agua" class="analisador-card">
+            <h2>💧 Analisador de Gastos de Água</h2>
+            <p>Descubra onde você pode economizar água no dia a dia.</p>
+
+            <div class="input-group">
+                <label for="escovacao">Torneira ligada ao escovar os dentes?</label>
+                <select id="escovacao">
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="tipoChuveiro">Qual tipo de chuveiro você usa?</label>
+                <select id="tipoChuveiro">
+                    <option value="ducha">Ducha Comum</option>
+                    <option value="eletrico">Chuveiro Elétrico</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="banhoRegistro">Fecha o registro ao se ensaboar no banho?</label>
+                <select id="banhoRegistro">
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="lavarLouca">Deixa a torneira ligada ao lavar louça?</label>
+                <select id="lavarLouca">
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="diasPingando">Torneira pingando? Por quantos dias (0 se não)?</label>
+                <input type="number" id="diasPingando" value="0" min="0">
+            </div>
+
+            <button id="calcularAgua">Calcular Consumo</button>
+
+            <div id="resultadoAgua" class="resultado-box">
+                </div>
+        </section>
+
+        <section id="analisador-reciclagem" class="analisador-card">
+            <h2>♻️ Analisador de Reciclagem</h2>
+            <p>Entenda a importância de separar seu lixo e o tempo de decomposição dos materiais.</p>
+
+            <div class="input-group">
+                <label for="pesoLixoSemanal">Qual o peso aproximado de lixo que sua casa gera por semana (em kg)?</label>
+                <input type="number" id="pesoLixoSemanal" value="10" min="0" step="0.5">
+            </div>
+
+            <div class="input-group">
+                <label>Quais tipos de materiais você recicla regularmente?</label>
+                <div>
+                    <input type="checkbox" id="reciclaPapel" value="papel"> <label for="reciclaPapel">Papel</label><br>
+                    <input type="checkbox" id="reciclaPlastico" value="plastico"> <label for="reciclaPlastico">Plástico</label><br>
+                    <input type="checkbox" id="reciclaVidro" value="vidro"> <label for="reciclaVidro">Vidro</label><br>
+                    <input type="checkbox" id="reciclaMetal" value="metal"> <label for="reciclaMetal">Metal</label>
+                </div>
+            </div>
+
+            <button id="analisarReciclagem">Analisar Descarte</button>
+
+            <div id="resultadoReciclagem" class="resultado-box">
+                </div>
+        </section>
+
+        <section id="analisador-poluicao" class="analisador-card">
+            <h2>🌍 Analisador de Poluição do Brasil</h2>
+            <p>Dados importantes sobre a situação ambiental do nosso país.</p>
+            <button id="mostrarPoluicao">Mostrar Dados</button>
+            <div id="resultadoPoluicao" class="resultado-box">
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Bio EcoLab. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/analizador.js"></script>
+</body>
+</html>

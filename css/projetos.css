@@ -1,0 +1,194 @@
+/*
+  projetos.css
+
+  Este arquivo contém estilos específicos para a página de Projetos (projetos.html).
+  Ele é carregado APÓS o style.css global, permitindo definir layouts e estilos únicos
+  para as seções de equipes e seus projetos, mantendo a consistência visual geral.
+*/
+
+/* --- Estilo para a Seção Hero da Página de Projetos --- */
+.page-hero-projetos {
+    /* Fundo verde vibrante para o hero da página de projetos */
+    background: var(--gradient-medium-green-bg); 
+    background-size: cover;
+    background-position: center;
+    /* O hero-overlay e hero-content são estilos globais do style.css */
+}
+
+/* --- Estilo para a Seção de Introdução aos Projetos (projects-intro-section) --- */
+.projects-intro-section {
+    background-color: var(--color-white); /* Fundo branco para garantir contraste */
+    border-radius: var(--border-radius-main);
+    box-shadow: var(--box-shadow-main);
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border: 1px solid var(--color-border);
+}
+
+/* Títulos das seções de equipe */
+.team-section-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-dark-green); /* Títulos de equipe em verde escuro */
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+}
+.team-section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-primary-green);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* --- Estilos para as Seções de Projetos por Equipe (.team-projects-section) --- */
+.team-projects-section {
+    padding: 60px 0; /* Ajuste o padding */
+    /* Fundos definidos no HTML com bg-light-green ou padrão (branco) */
+}
+
+/* Grade de Projetos */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* Espaçamento entre os cartões de projeto */
+    margin-top: 40px;
+}
+
+/* Estilo para o Cartão de Projeto Personalizado */
+.project-card-custom {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-main);
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card-custom:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.project-card-custom img {
+    width: 100%;
+    height: 200px; /* Altura da imagem do projeto */
+    object-fit: cover;
+    display: block;
+    border-bottom: 3px solid var(--color-primary-green); /* Borda verde na imagem */
+}
+
+.project-card-custom .card-content {
+    padding: 20px;
+    flex-grow: 1; /* Faz o conteúdo ocupar o espaço restante */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card-custom h4 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-dark-green);
+    margin-bottom: 10px;
+}
+
+.project-card-custom p {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--color-text-medium);
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.project-card-custom .team-tag {
+    display: inline-block;
+    background-color: var(--color-light-green); /* Cor de fundo da tag */
+    color: var(--color-dark-green); /* Cor do texto da tag */
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.btn-small {
+    padding: 8px 18px; /* Botão menor para o card */
+    font-size: 0.85rem;
+    align-self: flex-start; /* Alinha o botão à esquerda */
+    margin-top: 10px;
+}
+
+
+/* --- Estilos para a Seção de CTA Final --- */
+.cta-section {
+    background: var(--gradient-dark-green-bg); /* Fundo verde escuro para a CTA */
+    color: var(--color-white);
+    padding: 80px 0;
+    text-align: center;
+}
+
+/* --- Responsividade para projetos.css --- */
+@media (max-width: 992px) {
+    .team-section-title {
+        font-size: 2.2rem;
+    }
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+    .project-card-custom {
+        max-width: 380px; /* Limita largura em telas médias */
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-section-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        gap: 20px;
+    }
+    .project-card-custom img {
+        height: 180px;
+    }
+    .project-card-custom h4 {
+        font-size: 1.3rem;
+    }
+    .project-card-custom p {
+        font-size: 0.85rem;
+    }
+    .btn-small {
+        padding: 6px 15px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .team-projects-section {
+        padding: 40px 0;
+    }
+    .team-section-title {
+        font-size: 1.6rem;
+    }
+    .project-card-custom img {
+        height: 150px;
+    }
+    .project-card-custom h4 {
+        font-size: 1.2rem;
+    }
+}

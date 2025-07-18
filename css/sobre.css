@@ -1,0 +1,222 @@
+/*
+  sobre.css
+
+  Este arquivo contém estilos específicos para a página "Sobre Nós" (sobre.html).
+  Ele é carregado APÓS o style.css global, permitindo definir layouts e estilos únicos
+  para as seções de apresentação das equipes, mantendo a consistência visual geral.
+*/
+
+/* --- Estilo para a Seção Hero da Página Sobre Nós --- */
+.page-hero-sobre {
+    /* Fundo verde vibrante para o hero da página */
+    background: var(--gradient-medium-green-bg); 
+    background-size: cover;
+    background-position: center;
+    /* O hero-overlay e hero-content são estilos globais do style.css */
+}
+
+/* --- Estilo para a Seção de Introdução do Portal (about-us-intro-section) --- */
+.about-us-intro-section {
+    background-color: var(--color-white); /* Fundo branco para garantir contraste */
+    border-radius: var(--border-radius-main);
+    box-shadow: var(--box-shadow-main);
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border: 1px solid var(--color-border);
+}
+
+.about-us-section-title {
+    font-family: var(--font-heading);
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--color-dark-green); /* Títulos em verde escuro */
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+.about-us-section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--color-primary-green);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.about-us-description {
+    font-size: 1.1rem;
+    color: var(--color-text-medium);
+    max-width: 850px;
+    margin: 0 auto 30px;
+    text-align: justify;
+}
+
+/* --- Estilos para as Seções de Equipe (.team-section-about-us) --- */
+.team-section-about-us {
+    padding: 60px 0; /* Padding da seção */
+    /* Fundos bg-light-green ou padrão (branco) são definidos no HTML */
+}
+
+.team-group-title {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--color-dark-green);
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+.team-group-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: var(--color-primary-green);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.team-group-description {
+    font-size: 1rem;
+    color: var(--color-text-medium);
+    max-width: 700px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.team-groups-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; /* Espaçamento entre os cartões de equipe */
+    margin-top: 40px;
+}
+
+.team-group-card {
+    background-color: var(--color-white); /* Fundo branco para o cartão */
+    border-radius: var(--border-radius-main);
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    border: 1px solid var(--color-border);
+}
+
+.team-group-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    background: var(--gradient-light-green-bg); /* Degradê verde claro no hover */
+}
+
+.team-group-card h4 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-dark-green);
+    margin-bottom: 15px;
+}
+
+.team-group-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.team-group-card ul li {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--color-text-medium);
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+.team-group-card ul li:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Estilos para a Seção de CTA Final --- */
+.cta-section {
+    background: var(--gradient-dark-green-bg); /* Fundo verde escuro para a CTA */
+    color: var(--color-white);
+    padding: 80px 0;
+    text-align: center;
+}
+
+/* --- Responsividade para sobre.css --- */
+@media (max-width: 992px) {
+    .about-us-section-title {
+        font-size: 2.2rem;
+    }
+    .about-us-description {
+        font-size: 1rem;
+    }
+    .team-group-title {
+        font-size: 2rem;
+    }
+    .team-group-description {
+        font-size: 0.95rem;
+    }
+    .team-groups-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
+    .team-group-card {
+        padding: 20px;
+    }
+    .team-group-card h4 {
+        font-size: 1.3rem;
+    }
+    .team-group-card ul li {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-us-section-title {
+        font-size: 1.8rem;
+    }
+    .about-us-description {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+    .team-group-title {
+        font-size: 1.6rem;
+    }
+    .team-group-description {
+        font-size: 0.85rem;
+        margin-bottom: 30px;
+    }
+    .team-groups-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        gap: 20px;
+    }
+    .team-group-card {
+        max-width: 350px; /* Limita largura em telas menores */
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-us-intro-section,
+    .team-section-about-us {
+        padding: 40px 15px;
+    }
+    .about-us-section-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    .about-us-description {
+        font-size: 0.8rem;
+    }
+    .team-group-title {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+    .team-group-card h4 {
+        font-size: 1.2rem;
+    }
+    .team-group-card ul li {
+        font-size: 0.8rem;
+    }
+}

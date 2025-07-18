@@ -1,0 +1,192 @@
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f2f7; /* Azul claro suave */
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Garante que o body ocupa a altura mínima da tela */
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: #2e7d32; /* Verde escuro */
+    color: white;
+    padding: 20px 0;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin-bottom: 5px;
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.1em;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards quebrem a linha */
+    justify-content: center;
+    gap: 30px; /* Espaço entre os cards */
+    max-width: 1200px;
+    width: 100%;
+    padding-bottom: 50px; /* Espaço para o footer */
+}
+
+.analisador-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%; /* Ocupa 100% em telas pequenas */
+    max-width: 500px; /* Largura máxima para cards */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.analisador-card h2 {
+    color: #1b5e20; /* Verde mais escuro */
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.analisador-card p {
+    margin-bottom: 25px;
+    font-size: 1.05em;
+    color: #555;
+}
+
+.input-group {
+    width: 90%;
+    margin-bottom: 20px;
+    text-align: left; /* Alinha labels à esquerda */
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+}
+
+.input-group select,
+.input-group input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Garante que padding não aumente a largura total */
+}
+
+button {
+    background-color: #4CAF50; /* Verde vibrante */
+    color: white;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #45a049; /* Verde um pouco mais escuro ao passar o mouse */
+}
+
+.resultado-box {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f0f4c3; /* Amarelo/verde claro para destaque */
+    border-left: 5px solid #8bc34a; /* Borda verde limão */
+    border-radius: 5px;
+    text-align: left;
+    width: 90%;
+    font-size: 1.1em;
+    color: #333;
+    display: none; /* Escondido por padrão, JavaScript vai mostrar */
+    white-space: pre-wrap; /* Preserva quebras de linha e espaços no texto gerado pelo JS */
+}
+
+.resultado-box p {
+    margin-bottom: 10px;
+}
+
+.resultado-box strong {
+    color: #1b5e20; /* Verde escuro */
+}
+
+/* Estilos para o Analisador de Poluição */
+#resultadoPoluicao h3 {
+    color: #004d40; /* Teal escuro */
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+}
+
+#resultadoPoluicao ul {
+    list-style-type: disc; /* Bolinhas para a lista */
+    padding-left: 20px;
+}
+
+#resultadoPoluicao li {
+    margin-bottom: 8px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 15px;
+    width: 100%;
+    background-color: #388e3c; /* Verde médio */
+    color: white;
+    font-size: 0.9em;
+    position: relative;
+    bottom: 0;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    .analisador-card {
+        padding: 20px;
+    }
+    header h1 {
+        font-size: 2em;
+    }
+}
+/* Dentro de .input-group, você pode querer espaçamento extra para checkboxes */
+.input-group div {
+    margin-top: 10px;
+}
+
+.input-group input[type="checkbox"] {
+    margin-right: 8px; /* Espaço entre o checkbox e o label */
+    transform: scale(1.2); /* Aumenta um pouco o tamanho do checkbox */
+    vertical-align: middle; /* Alinha verticalmente com o texto */
+}
+
+.input-group label[for] { /* Estilo para os labels dos checkboxes */
+    display: inline-block; /* Permite que o label fique ao lado do checkbox */
+    margin-bottom: 0;
+    font-weight: normal; /* Labels de checkbox podem ser mais leves */
+    color: #333;
+    vertical-align: middle; /* Alinha verticalmente com o checkbox */
+}
+
+/* Opcional: Estilo para o resultado da reciclagem, se quiser uma cor diferente */
+#resultadoReciclagem {
+    background-color: #d9f7be; /* Um verde bem clarinho */
+    border-left: 5px solid #a7d97b; /* Uma borda verde um pouco mais escura */
+}

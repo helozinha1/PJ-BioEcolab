@@ -1,0 +1,1357 @@
+/* Importar Google Fonts: Poppins (para títulos e destaque) e Lato (para corpo) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
+
+/* Variáveis CSS para Paleta de Cores e Tipografia */
+:root {
+    --color-primary-green: #28a745; /* Verde vibrante para ações e destaques */
+    --color-dark-green: #1a6d36;    /* Verde mais escuro para fundos e texto */
+    --color-light-green: #e9f5ed;   /* Um verde muito claro para seções de fundo */
+    --color-accent-blue: #007bff;   /* Azul para CTAs secundárias ou links (pode ser ajustado para verde se preferir) */
+    --color-text-dark: #212529;     /* Texto principal (quase preto) para contraste */
+    --color-text-medium: #495057;   /* Texto secundário/parágrafos (tom de cinza mais escuro para contraste no verde) */
+    --color-white: #ffffff;        /* Branco puro */
+    --color-border: #d4edda;       /* Borda em tom de verde muito claro */
+
+    /* Degradês Verdes para Todos os Fundos */
+    /* Tonalidade mais clara para garantir contraste com texto escuro */
+    --gradient-light-green-bg: linear-gradient(to right, #F7FCF8, #ECF9EE); /* Um verde quase branco, muito sutil */
+    --gradient-medium-green-bg: linear-gradient(to right, #4CAF50, #28a745); /* Degradê para elementos de destaque/hover */
+    --gradient-dark-green-bg: linear-gradient(to right, #1a6d36, #145a2c); /* Degradê para fundos escuros */
+    --gradient-header-footer: linear-gradient(to right, #1a6d36, #28a745); /* Degradê específico para cabeçalho/rodapé */
+    --gradient-hero-bg: linear-gradient(to bottom right, #28a745, #4CAF50); /* Verde vibrante para o Hero */
+
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Lato', sans-serif;
+
+    --transition-speed: 0.3s;
+    --border-radius-main: 12px;
+    --box-shadow-main: 0 8px 25px rgba(0, 0, 0, 0.1);
+    --box-shadow-hover: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Base Styles & Utilities --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--color-text-dark); /* Texto escuro por padrão */
+    background: var(--gradient-light-green-bg); 
+    overflow-x: hidden; /* Controla o overflow horizontal, importante para menus laterais */
+}
+
+/* Adicionado para impedir rolagem quando o menu mobile está aberto */
+body.no-scroll {
+    overflow: hidden;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.bg-light-green {
+    background: var(--gradient-light-green-bg);
+}
+
+.bg-dark-green {
+    background: var(--gradient-dark-green-bg);
+    color: var(--color-white); /* Texto branco em fundo escuro */
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-white {
+    color: var(--color-white) !important;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--color-text-dark); /* Títulos escuros em fundos claros */
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-primary-green);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+.section-description {
+    font-size: 1.15rem;
+    color: var(--color-text-medium); /* Descrições em tom médio */
+    max-width: 800px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+.bg-dark-green .section-title {
+    color: var(--color-white); /* Títulos brancos em fundos escuros */
+}
+.bg-dark-green .section-title::after {
+    background-color: var(--color-primary-green);
+}
+.bg-dark-green .section-description {
+    color: var(--color-white); 
+}
+
+
+/* --- Buttons --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all var(--transition-speed) ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.btn i {
+    margin-left: 10px;
+    transition: transform var(--transition-speed) ease;
+}
+
+.btn:hover i {
+    transform: translateX(5px);
+}
+
+.btn-primary {
+    background: var(--gradient-medium-green-bg);
+    color: var(--color-white);
+    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, #4CAF50, var(--color-primary-green));
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(40, 167, 69, 0.4);
+}
+
+.btn-secondary {
+    background-color: var(--color-white); /* Fundo branco sólido para maior contraste */
+    color: var(--color-text-dark); /* Texto escuro */
+    border: 2px solid var(--color-primary-green);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary:hover {
+    background: var(--gradient-medium-green-bg); /* Degradê verde no hover */
+    color: var(--color-white);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-slide {
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente para o texto escuro */
+    color: var(--color-primary-green); /* Texto em verde primário */
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.btn-slide:hover {
+    background: var(--gradient-medium-green-bg);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.btn-outline-green {
+    background-color: transparent;
+    color: var(--color-primary-green);
+    border: 2px solid var(--color-primary-green);
+    font-weight: 600;
+}
+.btn-outline-green:hover {
+    background: var(--gradient-medium-green-bg);
+    color: var(--color-white);
+    transform: translateY(-3px);
+}
+
+.btn-white-outline {
+    background-color: transparent;
+    color: var(--color-white);
+    border: 2px solid var(--color-white);
+    font-weight: 600;
+}
+.btn-white-outline:hover {
+    background-color: var(--color-white);
+    color: var(--color-text-dark); /* Texto escuro no hover */
+    transform: translateY(-3px);
+}
+
+/* --- Header & Navbar --- */
+.main-header {
+    background: var(--gradient-header-footer);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--color-white);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+.logo:hover {
+    color: #d4edda;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    margin-left: 35px;
+}
+
+.nav-menu a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color var(--transition-speed) ease;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: var(--color-primary-green);
+    bottom: -2px;
+    left: 0;
+    transition: width var(--transition-speed) ease-out;
+}
+
+.nav-menu a:hover {
+    color: var(--color-light-green);
+}
+
+/* Hamburger Menu (Mobile) */
+.hamburger-menu {
+    display: none; /* Escondido por padrão em desktop */
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001; /* Garante que fique acima do menu mobile quando aberto */
+}
+
+.hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-white);
+    margin: 4px 0;
+    transition: all var(--transition-speed) ease-in-out;
+}
+
+/* Animações do ícone do hambúrguer */
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Overlay para fechar o menu mobile ao clicar fora */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro semi-transparente */
+    z-index: 998; /* Fica entre o conteúdo e o menu */
+    opacity: 0; /* Invisível por padrão */
+    transition: opacity 0.3s ease-in-out; /* Transição suave */
+    pointer-events: none; /* Permite cliques através dele quando invisível */
+}
+
+/* O overlay só fica visível e ativo quando o menu está aberto */
+.nav-menu.active ~ .menu-overlay { /* Se o overlay é um irmão do nav-menu no HTML */
+    opacity: 1;
+    pointer-events: auto; /* Permite cliques nele */
+}
+
+/* Se o overlay for um filho direto do body (criado pelo JS) e o body tiver 'no-scroll' */
+body.no-scroll .menu-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* --- Hero Section (Homepage) --- */
+.hero-section {
+    position: relative;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-white);
+    padding: 40px 20px;
+
+    background: var(--gradient-hero-bg); 
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+}
+
+.hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.hero-content .lead-text {
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* --- Carousel Section --- */
+.carousel-section {
+    background: var(--gradient-light-green-bg);
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--border-radius-main);
+    box-shadow: var(--box-shadow-main);
+    margin-top: 40px;
+    transition: transform var(--transition-speed) ease;
+}
+
+.carousel-container:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    flex-shrink: 0;
+    height: 450px;
+    background: var(--gradient-medium-green-bg); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    text-align: center;
+    position: relative;
+}
+
+.carousel-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+    z-index: 1;
+}
+
+.slide-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    max-width: 700px;
+}
+
+.slide-content h3 {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.slide-content p {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--color-white);
+    border: none;
+    padding: 15px 18px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 3;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-prev {
+    left: 20px;
+}
+
+.carousel-next {
+    right: 20px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.dot.active {
+    background-color: var(--color-primary-green);
+    transform: scale(1.2);
+}
+
+/* --- About Creation Section --- */
+.about-creation-section {
+    padding: 60px 0;
+}
+.about-creation-section .section-description {
+    max-width: 900px;
+}
+
+
+/* --- Quick Links / Feature Grid Section --- */
+.quick-links-section {
+    background: var(--gradient-light-green-bg);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-main);
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: all var(--transition-speed) ease;
+    text-decoration: none;
+    color: var(--color-text-dark); /* Texto escuro por padrão */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--color-border);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    background: var(--gradient-medium-green-bg);
+    color: var(--color-white); /* Texto branco no hover */
+}
+
+.icon-large-circle {
+    font-size: 3.5rem;
+    color: var(--color-primary-green);
+    background-color: var(--color-white);
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: all var(--transition-speed) ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card:hover .icon-large-circle {
+    background-color: var(--color-white);
+    color: var(--color-primary-green);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--color-text-dark); /* Título escuro */
+    transition: color var(--transition-speed) ease;
+}
+
+.feature-card:hover h3 {
+    color: var(--color-white); /* Título branco no hover */
+}
+
+.feature-card p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text-medium); /* Parágrafo em tom médio */
+    transition: color var(--transition-speed) ease;
+}
+
+.feature-card:hover p {
+    color: rgba(255, 255, 255, 0.9); /* Parágrafo branco semi-transparente no hover */
+}
+
+/* --- Interview Preview Section --- */
+.interview-preview-section {
+    padding: 80px 0;
+    text-align: center;
+}
+.interview-preview-section .btn {
+    margin-top: 30px;
+}
+
+
+/* --- Main Footer --- */
+.main-footer {
+    background: var(--gradient-dark-green-bg);
+    color: var(--color-white);
+    padding: 60px 0 20px;
+    font-family: var(--font-body);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-grid h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-primary-green);
+    margin-bottom: 20px;
+}
+
+.footer-grid p, .footer-grid ul li {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-grid ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-grid ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+.footer-grid ul li a:hover {
+    color: var(--color-primary-green);
+}
+
+.footer-contact p i {
+    margin-right: 10px;
+    color: var(--color-primary-green);
+}
+
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: var(--color-white);
+    font-size: 1.5rem;
+    transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.social-links a:hover {
+    color: var(--color-primary-green);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* --- Páginas Internas: page-hero-section (ex: preservacao.html) --- */
+.page-hero-section {
+    position: relative;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-white);
+    padding: 30px 20px;
+
+    background: var(--gradient-medium-green-bg);
+    background-size: cover;
+    background-position: center;
+}
+
+.page-hero-section .hero-overlay {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+}
+
+.page-hero-section .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+}
+
+.page-hero-section h1 {
+    font-family: var(--font-heading);
+    font-size: 3.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.2;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.page-hero-section .lead-text {
+    font-family: var(--font-body);
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Conteúdo das Páginas Internas: content-section (geral) --- */
+/* Este é o estilo padrão, que pode ser sobrescrito pelo CSS da página específica */
+.content-section {
+    background-color: var(--color-white); /* Fundo padrão é branco puro */
+    padding: 80px 0;
+    border-radius: var(--border-radius-main);
+    box-shadow: var(--box-shadow-main);
+    margin: 40px auto;
+}
+
+/* Para as grids de cards em páginas internas (padrão) */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.content-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-main);
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: all var(--transition-speed) ease;
+    text-decoration: none;
+    color: var(--color-text-dark); /* Texto escuro */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--color-border);
+}
+
+.content-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    background: var(--gradient-medium-green-bg);
+    color: var(--color-white); /* Texto branco no hover */
+}
+
+.icon-circle-large {
+    font-size: 3.5rem;
+    color: var(--color-primary-green);
+    background-color: var(--color-white);
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: all var(--transition-speed) ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.content-card:hover .icon-circle-large {
+    background-color: var(--color-white);
+    color: var(--color-primary-green);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.content-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--color-text-dark); /* Título escuro */
+    transition: color var(--transition-speed) ease;
+}
+
+.content-card:hover h3 {
+    color: var(--color-white);
+}
+
+.content-card p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text-medium);
+    transition: color var(--transition-speed) ease;
+}
+
+.content-card:hover p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Estilo para a grade de projetos (dentro de projetos.html) */
+.project-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-main);
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-border);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 4px solid var(--color-primary-green);
+}
+
+.project-card-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text-medium);
+    margin-bottom: 15px;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.project-card .team-name {
+    font-size: 0.9rem;
+    color: var(--color-text-medium);
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+.project-card .btn-view-project {
+    display: inline-flex;
+    align-items: center;
+    background: var(--gradient-medium-green-bg);
+    color: var(--color-white);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background var(--transition-speed) ease, transform var(--transition-speed) ease;
+    margin-top: 20px;
+    align-self: flex-start;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.2);
+}
+
+.project-card .btn-view-project:hover {
+    background: linear-gradient(to right, #4CAF50, var(--color-primary-green));
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.3);
+}
+.project-card .btn-view-project i {
+    margin-left: 8px;
+    transition: transform var(--transition-speed) ease;
+}
+.project-card .btn-view-project:hover i {
+    transform: translateX(5px);
+}
+
+/* Estilo para a grade de informações (dentro de agua.html, lixo.html) */
+.info-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.info-item-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-main);
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: all var(--transition-speed) ease;
+    border: 1px solid var(--color-border);
+}
+
+.info-item-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    background: var(--gradient-medium-green-bg);
+    color: var(--color-white);
+}
+
+.info-item-card .icon-large {
+    font-size: 3.5rem;
+    color: var(--color-primary-green);
+    margin-bottom: 20px;
+    transition: color var(--transition-speed) ease;
+}
+.info-item-card:hover .icon-large {
+    color: var(--color-white);
+}
+
+.info-item-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--color-text-dark);
+    transition: color var(--transition-speed) ease;
+}
+.info-item-card:hover h3 {
+    color: var(--color-white);
+}
+
+.info-item-card p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text-medium);
+    transition: color var(--transition-speed) ease;
+}
+.info-item-card:hover p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Estilo para vídeo (entrevista.html) */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 900px;
+    margin: 40px auto;
+    border-radius: var(--border-radius-main);
+    box-shadow: var(--box-shadow-main);
+    background: var(--gradient-dark-green-bg);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Estilo para equipe (sobre.html) */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.team-member-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-main);
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: all var(--transition-speed) ease;
+    border: 1px solid var(--color-border);
+}
+
+.team-member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    background: var(--gradient-light-green-bg);
+}
+
+.team-member-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 5px solid var(--color-primary-green);
+    transition: border-color var(--transition-speed) ease;
+}
+
+.team-member-card:hover img {
+    border-color: var(--color-dark-green);
+}
+
+.team-member-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin-bottom: 8px;
+}
+
+.team-member-card p {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--color-text-medium);
+    line-height: 1.5;
+}
+
+.team-member-card .member-bio {
+    font-size: 0.85rem;
+    color: var(--color-text-medium);
+    margin-top: 10px;
+}
+
+
+/* --- Responsive Design (Media Queries) --- */
+
+/* Esconde o menu de navegação padrão em telas menores que 992px e mostra o hambúrguer */
+@media (max-width: 992px) {
+    .nav-menu {
+        position: fixed;
+        right: -100%; /* Inicia fora da tela */
+        top: 80px; /* Altura do cabeçalho */
+        flex-direction: column;
+        background: var(--gradient-dark-green-bg); /* Fundo do menu mobile */
+        width: 70%; /* Largura do menu */
+        height: calc(100% - 80px); /* Preenche o resto da altura da viewport */
+        padding: 30px 0;
+        text-align: center;
+        transition: right var(--transition-speed) ease-in-out; /* Animação de slide */
+        box-shadow: -4px 0 15px rgba(0, 0, 0, 0.2);
+        z-index: 999; /* Garante que o menu esteja acima do conteúdo */
+    }
+
+    /* Quando a classe 'active' é adicionada pelo JS, o menu entra na tela */
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-menu li {
+        margin: 20px 0; /* Mais espaçamento vertical para links */
+    }
+
+    .nav-menu a {
+        color: var(--color-white); /* Links brancos no menu escuro */
+        font-size: 1.2rem;
+    }
+    .nav-menu a::after {
+        background-color: var(--color-primary-green);
+    }
+    .nav-menu a:hover {
+        color: var(--color-primary-green);
+    }
+
+    /* Mostra o ícone do hambúrguer em telas menores */
+    .hamburger-menu {
+        display: flex; 
+    }
+
+    /* Ajustes de fonte e espaçamento para elementos gerais em telas de tablet/desktop menores */
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+    .hero-content .lead-text {
+        font-size: 1.3rem;
+    }
+    .hero-buttons {
+        flex-direction: column; /* Botões empilhados */
+        gap: 15px;
+    }
+    .carousel-slide {
+        height: 350px;
+    }
+    .slide-content h3 {
+        font-size: 2.2rem;
+    }
+    .slide-content p {
+        font-size: 1rem;
+    }
+    .section-title {
+        font-size: 2.4rem;
+    }
+    .section-description {
+        font-size: 1.15rem; /* Aumentado para melhor leitura em telas médias */
+    }
+    .feature-card h3 {
+        font-size: 1.5rem;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr; /* Colunas do rodapé empilhadas */
+        text-align: center;
+    }
+    .footer-contact .social-links {
+        justify-content: center;
+    }
+
+    .page-hero-section h1 {
+        font-size: 3rem;
+    }
+    .page-hero-section .lead-text {
+        font-size: 1.1rem;
+    }
+    .content-card h3 {
+        font-size: 1.5rem;
+    }
+    .project-card h3 {
+        font-size: 1.6rem;
+    }
+    .info-item-card h3 {
+        font-size: 1.6rem;
+    }
+    .team-member-card h3 {
+        font-size: 1.4rem;
+    }
+}
+
+/* Ajustes para telas de smartphone maiores e tablets em modo retrato */
+@media (max-width: 768px) {
+    .main-header {
+        padding: 12px 0;
+    }
+    .logo {
+        font-size: 1.8rem;
+    }
+    .nav-menu {
+        width: 80%; /* Menu mobile um pouco mais largo */
+    }
+    .hero-section {
+        height: 75vh;
+    }
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    .hero-content .lead-text {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    .carousel-slide {
+        height: 300px;
+    }
+    .slide-content h3 {
+        font-size: 1.8rem;
+    }
+    .slide-content p {
+        font-size: 0.9rem;
+    }
+    .carousel-button {
+        padding: 12px 14px;
+        font-size: 1.2rem;
+    }
+    .section-padding {
+        padding: 60px 0;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .section-description {
+        font-size: 0.9rem;
+    }
+    .feature-card {
+        padding: 25px;
+    }
+    .icon-large-circle {
+        width: 70px;
+        height: 70px;
+        font-size: 2.8rem;
+        margin-bottom: 15px;
+    }
+    .feature-card h3 {
+        font-size: 1.3rem;
+    }
+    .feature-card p {
+        font-size: 0.85rem;
+    }
+    .main-footer {
+        padding: 40px 0 15px;
+    }
+    .footer-grid {
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+    .footer-grid h3 {
+        font-size: 1.2rem;
+    }
+    .footer-grid p, .footer-grid ul li {
+        font-size: 0.85rem;
+    }
+    .social-links a {
+        font-size: 1.3rem;
+    }
+    .footer-bottom {
+        padding-top: 15px;
+        font-size: 0.75rem;
+    }
+    .page-hero-section h1 {
+        font-size: 2.5rem;
+    }
+    .page-hero-section .lead-text {
+        font-size: 1.0rem;
+    }
+    .content-section {
+        padding: 60px 20px;
+    }
+    .content-card h3 {
+        font-size: 1.3rem;
+    }
+    .project-card h3 {
+        font-size: 1.4rem;
+    }
+    .info-item-card h3 {
+        font-size: 1.4rem;
+    }
+    .team-member-card h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Ajustes para telas de smartphone pequenas */
+@media (max-width: 576px) {
+    .container {
+        padding: 0 15px;
+    }
+    .nav-menu {
+        width: 90%; /* Menu mobile quase largura total */
+    }
+    .hero-section {
+        height: 65vh;
+        padding: 30px 15px;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .hero-content .lead-text {
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .carousel-slide {
+        height: 250px;
+    }
+    .slide-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    .slide-content p {
+        font-size: 0.8rem;
+        margin-bottom: 20px;
+    }
+    .btn.btn-slide {
+        padding: 8px 18px;
+        font-size: 0.85rem;
+    }
+    .carousel-button {
+        padding: 10px 12px;
+        font-size: 1rem;
+    }
+    .section-padding {
+        padding: 40px 0;
+    }
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    .section-description {
+        font-size: 0.85rem;
+        margin-bottom: 25px;
+    }
+    .features-grid {
+        grid-template-columns: 1fr; /* Uma coluna */
+    }
+    .feature-card {
+        padding: 20px;
+    }
+    .icon-large-circle {
+        width: 60px;
+        height: 60px;
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+    }
+    .feature-card h3 {
+        font-size: 1.1rem;
+    }
+    .feature-card p {
+        font-size: 0.8rem;
+    }
+    .main-footer {
+        padding: 30px 0 10px;
+    }
+    .footer-grid h3 {
+        font-size: 1.1rem;
+    }
+    .footer-grid p, .footer-grid ul li {
+        font-size: 0.8rem;
+    }
+    .page-hero-section h1 {
+        font-size: 2rem;
+    }
+    .page-hero-section .lead-text {
+        font-size: 0.9rem;
+    }
+    .content-section {
+        padding: 40px 15px;
+    }
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+    .content-card h3 {
+        font-size: 1.1rem;
+    }
+    .project-card h3 {
+        font-size: 1.2rem;
+    }
+    .info-items-grid {
+        grid-template-columns: 1fr;
+    }
+    .info-item-card h3 {
+        font-size: 1.2rem;
+    }
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    .team-member-card h3 {
+        font-size: 1.1rem;
+    }
+}
