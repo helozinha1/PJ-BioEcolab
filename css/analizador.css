@@ -1,7 +1,7 @@
 /* Estilos Gerais */
 body {
     font-family: Arial, sans-serif;
-    background-color: #e0f2f7; /* Azul claro suave */
+    background-color: #E9F0E5; /* Azul claro suave */
     color: #333;
     margin: 0;
     padding: 20px;
@@ -15,7 +15,7 @@ body {
 header {
     text-align: center;
     margin-bottom: 40px;
-    background-color: #2e7d32; /* Verde escuro */
+    background-color: #3A6047; /* Verde escuro */
     color: white;
     padding: 20px 0;
     width: 100%;
@@ -109,7 +109,7 @@ button:hover {
     margin-top: 30px;
     padding: 20px;
     background-color: #f0f4c3; /* Amarelo/verde claro para destaque */
-    border-left: 5px solid #8bc34a; /* Borda verde limão */
+    border-left: 5px solid #3A6047; /* Borda verde limão */
     border-radius: 5px;
     text-align: left;
     width: 90%;
@@ -124,7 +124,7 @@ button:hover {
 }
 
 .resultado-box strong {
-    color: #1b5e20; /* Verde escuro */
+    color: #3A6047; /* Verde escuro */
 }
 
 /* Estilos para o Analisador de Poluição */
@@ -149,7 +149,7 @@ footer {
     margin-top: 40px;
     padding: 15px;
     width: 100%;
-    background-color: #388e3c; /* Verde médio */
+    background-color: #3A6047; /* Verde médio */
     color: white;
     font-size: 0.9em;
     position: relative;
@@ -188,5 +188,5 @@ footer {
 /* Opcional: Estilo para o resultado da reciclagem, se quiser uma cor diferente */
 #resultadoReciclagem {
     background-color: #d9f7be; /* Um verde bem clarinho */
-    border-left: 5px solid #a7d97b; /* Uma borda verde um pouco mais escura */
+    border-left: 5px solid #3A6047; /* Uma borda verde um pouco mais escura */
 }
