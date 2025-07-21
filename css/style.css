@@ -1,25 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
 
 :root {
-    --color-primary-green: #28a745;
-    --color-dark-green: #1a6d36;
-    --color-light-green: #e9f5ed;
-    --color-accent-blue: #007bff;
-    --color-text-dark: #212529;
-    --color-text-medium: #495057;
+    /* Cores de Base - Verdes Mais Sóbrios */
+    --color-primary-green: #4A7C59; /* Um verde floresta, principal para botões e destaques */
+    --color-dark-green: #3A6047;    /* Um verde escuro mais profundo para fundos e texto */
+    --color-light-green: #E9F0E5;   /* Um verde muito claro, quase off-white, para fundos leves */
+    --color-accent-blue: #5B9EB0;   /* Um azul acinzentado suave para um toque de contraste (se usado) */
+
+    /* Cores Neutras */
     --color-white: #ffffff;
-    --color-border: #d4edda;
-    --gradient-light-green-bg: linear-gradient(to right, #F7FCF8, #ECF9EE);
-    --gradient-medium-green-bg: linear-gradient(to right, #4CAF50, #28a745);
-    --gradient-dark-green-bg: linear-gradient(to right, #1a6d36, #145a2c);
-    --gradient-header-footer: linear-gradient(to right, #1a6d36, #28a745);
-    --gradient-hero-bg: linear-gradient(to bottom right, #28a745, #4CAF50);
+    --color-black: #1A1A1A; /* Um preto mais suave para melhor legibilidade */
+    --color-text-dark: #333A35; /* Um verde escuro acinzentado para textos principais */
+    --color-text-medium: #607C6B; /* Um verde médio para parágrafos */
+    --color-border: #CED8C6; /* Uma borda sutilmente verde-acinzentada */
+
+    /* Gradientes - Mais Suaves e Harmoniosos */
+    --gradient-light-green-bg: linear-gradient(to right, #F4F7F2, #EAF0E6); /* Fundo claro muito suave */
+    --gradient-medium-green-bg: linear-gradient(to right, #5A8F6A, #4A7C59); /* Botões e elementos de destaque */
+    --gradient-dark-green-bg: linear-gradient(to right, #3A6047, #2F4D3C); /* Fundos escuros e rodapé */
+    --gradient-header-footer: linear-gradient(to right, #3A6047, #4A7C59); /* Cabeçalho e rodapé */
+    --gradient-hero-bg: linear-gradient(to bottom right, #4A7C59, #5A8F6A); /* Seção Hero */
+
+    /* Fontes */
     --font-heading: 'Poppins', sans-serif;
     --font-body: 'Lato', sans-serif;
+
+    /* Transições, Bordas, Sombras */
     --transition-speed: 0.3s;
     --border-radius-main: 12px;
-    --box-shadow-main: 0 8px 25px rgba(0, 0, 0, 0.1);
-    --box-shadow-hover: 0 12px 35px rgba(0, 0, 0, 0.15);
+    --box-shadow-main: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --box-shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 * {
@@ -1406,5 +1416,56 @@ body.no-scroll .menu-overlay {
         height: auto !important;
         max-width: 100%;
         line-height: 1.4;
+    }
+}
+/* Botão Flutuante do WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 28px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    /* Certifica que o display é flex e os itens são centralizados */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Remove sublinhado se o traço for um */
+    text-decoration: none; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Adicione estas linhas se o traço for uma borda interna */
+    border: none;
+    outline: none;
+}
+
+.whatsapp-float i {
+    /* Garante que o ícone preencha o espaço e não gere traços */
+    display: block; /* Ou display: flex; se for mais de um item no <i> */
+    line-height: 1; /* Ajuda a alinhar verticalmente o texto/ícone */
+    margin: 0; /* Remove qualquer margem padrão */
+    padding: 0; /* Remove qualquer padding padrão */
+    /* Se for um traço de cor, assegure a cor */
+    color: #FFF; 
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Opcional: Para telas menores, ajuste o tamanho e a posição */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 24px;
     }
 }
