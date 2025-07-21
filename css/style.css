@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
 
 :root {
-    /* Cores de Base - Verdes Mais Sóbrios */
+    /* Cores de Base - Verdes Mais Sóbrios e Elegantes */
     --color-primary-green: #4A7C59; /* Um verde floresta, principal para botões e destaques */
     --color-dark-green: #3A6047;    /* Um verde escuro mais profundo para fundos e texto */
     --color-light-green: #E9F0E5;   /* Um verde muito claro, quase off-white, para fundos leves */
@@ -84,7 +84,7 @@ body.no-scroll {
 
 .section-title {
     font-family: var(--font-heading);
-    font-size: 2.8rem;
+    font-size: 2.2rem; /* Reduzido de 2.8rem */
     font-weight: 700;
     color: var(--color-text-dark);
     text-align: center;
@@ -150,13 +150,13 @@ body.no-scroll {
 .btn-primary {
     background: var(--gradient-medium-green-bg);
     color: var(--color-white);
-    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.3);
+    box-shadow: 0 6px 15px rgba(74, 124, 89, 0.3); /* Ajustado para a nova cor */
 }
 
 .btn-primary:hover {
-    background: linear-gradient(to right, #4CAF50, var(--color-primary-green));
+    background: linear-gradient(to right, var(--color-primary-green), var(--color-dark-green)); /* Transição mais suave */
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(40, 167, 69, 0.4);
+    box-shadow: 0 10px 25px rgba(74, 124, 89, 0.4); /* Ajustado para a nova cor */
 }
 
 .btn-secondary {
@@ -241,7 +241,7 @@ body.no-scroll {
 }
 
 .logo:hover {
-    color: #d4edda;
+    color: var(--color-light-green); /* Nova cor de hover */
 }
 
 .nav-menu {
@@ -360,7 +360,7 @@ body.no-scroll .menu-overlay {
 
 .hero-content h1 {
     font-family: var(--font-heading);
-    font-size: 4.5rem;
+    font-size: 3.8rem; /* Reduzido de 4.5rem */
     font-weight: 700;
     margin-bottom: 20px;
     line-height: 1.2;
@@ -403,15 +403,14 @@ body.no-scroll .menu-overlay {
 .carousel-track {
     display: flex;
     transition: transform 0.6s ease-in-out;
-    /* Adicionado para garantir que o track não quebre a linha */
     white-space: nowrap; 
 }
 
 .carousel-slide {
-    min-width: 100%; /* Isso é crucial para que cada slide ocupe 100% da largura */
+    min-width: 100%;
     flex-shrink: 0;
     height: 450px;
-    background: var(--gradient-medium-green-bg); /* O ideal é que isso seja uma imagem de fundo real */
+    background: var(--gradient-medium-green-bg);
     background-size: cover;
     background-position: center;
     display: flex;
@@ -419,7 +418,6 @@ body.no-scroll .menu-overlay {
     justify-content: center;
     color: var(--color-white);
     position: relative;
-    /* Ajustado para centralizar o conteúdo do slide */
     text-align: center; 
 }
 
@@ -440,14 +438,13 @@ body.no-scroll .menu-overlay {
     padding: 20px;
     max-width: 700px;
     text-align: center;
-    /* Adicionado para tentar corrigir o texto espelhado/invertido, se for um problema de transformação */
     transform: none !important; 
     -webkit-transform: none !important;
 }
 
 .slide-content h3 {
     font-family: var(--font-heading);
-    font-size: 2.8rem;
+    font-size: 2.2rem; /* Reduzido de 2.8rem */
     font-weight: 700;
     margin-bottom: 15px;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
@@ -579,7 +576,7 @@ body.no-scroll .menu-overlay {
 
 .feature-card h3 {
     font-family: var(--font-heading);
-    font-size: 1.7rem;
+    font-size: 1.5rem; /* Reduzido de 1.7rem */
     font-weight: 600;
     margin-bottom: 10px;
     color: var(--color-text-dark);
@@ -627,7 +624,7 @@ body.no-scroll .menu-overlay {
 
 .footer-grid h3 {
     font-family: var(--font-heading);
-    font-size: 1.3rem;
+    font-size: 1.15rem; /* Reduzido de 1.3rem */
     font-weight: 600;
     color: var(--color-primary-green);
     margin-bottom: 20px;
@@ -710,7 +707,7 @@ body.no-scroll .menu-overlay {
 
 .page-hero-section h1 {
     font-family: var(--font-heading);
-    font-size: 3.8rem;
+    font-size: 3.2rem; /* Reduzido de 3.8rem */
     font-weight: 700;
     margin-bottom: 15px;
     line-height: 1.2;
@@ -786,7 +783,7 @@ body.no-scroll .menu-overlay {
 
 .content-card h3 {
     font-family: var(--font-heading);
-    font-size: 1.7rem;
+    font-size: 1.5rem; /* Reduzido de 1.7rem */
     font-weight: 600;
     margin-bottom: 10px;
     color: var(--color-text-dark);
@@ -842,7 +839,7 @@ body.no-scroll .menu-overlay {
 
 .project-card h3 {
     font-family: var(--font-heading);
-    font-size: 1.8rem;
+    font-size: 1.6rem; /* Reduzido de 1.8rem */
     font-weight: 600;
     color: var(--color-text-dark);
     margin-bottom: 10px;
@@ -876,13 +873,13 @@ body.no-scroll .menu-overlay {
     margin-top: 20px;
     align-self: flex-start;
     font-weight: 600;
-    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.2);
+    box-shadow: 0 4px 10px rgba(74, 124, 89, 0.2); /* Ajustado para nova cor */
 }
 
 .project-card .btn-view-project:hover {
-    background: linear-gradient(to right, #4CAF50, var(--color-primary-green));
+    background: linear-gradient(to right, var(--color-primary-green), var(--color-dark-green)); /* Transição mais suave */
     transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.3);
+    box-shadow: 0 6px 15px rgba(74, 124, 89, 0.3); /* Ajustado para nova cor */
 }
 
 .project-card .btn-view-project i {
@@ -931,7 +928,7 @@ body.no-scroll .menu-overlay {
 
 .info-item-card h3 {
     font-family: var(--font-heading);
-    font-size: 1.8rem;
+    font-size: 1.6rem; /* Reduzido de 1.8rem */
     font-weight: 600;
     margin-bottom: 10px;
     color: var(--color-text-dark);
@@ -1013,7 +1010,7 @@ body.no-scroll .menu-overlay {
 
 .team-member-card h3 {
     font-family: var(--font-heading);
-    font-size: 1.6rem;
+    font-size: 1.4rem; /* Reduzido de 1.6rem */
     font-weight: 600;
     color: var(--color-text-dark);
     margin-bottom: 8px;
@@ -1031,6 +1028,56 @@ body.no-scroll .menu-overlay {
     color: var(--color-text-medium);
     margin-top: 10px;
 }
+
+/* Novo estilo para a grade de notícias na página inicial */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+.news-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-main);
+    box-shadow: var(--box-shadow-main);
+    overflow: hidden;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-border); /* Adicionado borda sutil */
+}
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover);
+}
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+.news-card-content {
+    padding: 20px;
+    flex-grow: 1;
+}
+.news-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem; /* Ajustado para combinar com outros títulos de card */
+    margin-bottom: 10px;
+    color: var(--color-text-dark);
+}
+.news-card p {
+    font-size: 0.95rem;
+    color: var(--color-text-medium);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+.news-card .btn {
+    align-self: flex-start;
+}
+
+
+/* --- Media Queries (Responsividade) --- */
 
 @media (max-width: 992px) {
     .nav-menu {
@@ -1074,7 +1121,7 @@ body.no-scroll .menu-overlay {
     }
 
     .hero-content h1 {
-        font-size: 3.5rem;
+        font-size: 3.0rem; /* Ajustado para menor em telas menores */
     }
 
     .hero-content .lead-text {
@@ -1091,7 +1138,7 @@ body.no-scroll .menu-overlay {
     }
 
     .slide-content h3 {
-        font-size: 2.2rem;
+        font-size: 2.0rem; /* Ajustado para menor em telas menores */
     }
 
     .slide-content p {
@@ -1099,7 +1146,7 @@ body.no-scroll .menu-overlay {
     }
 
     .section-title {
-        font-size: 2.4rem;
+        font-size: 2.0rem; /* Ajustado para menor em telas menores */
     }
 
     .section-description {
@@ -1107,7 +1154,7 @@ body.no-scroll .menu-overlay {
     }
 
     .feature-card h3 {
-        font-size: 1.5rem;
+        font-size: 1.4rem; /* Ajustado para menor em telas menores */
     }
 
     .footer-grid {
@@ -1120,7 +1167,7 @@ body.no-scroll .menu-overlay {
     }
 
     .page-hero-section h1 {
-        font-size: 3rem;
+        font-size: 2.8rem; /* Ajustado para menor em telas menores */
     }
 
     .page-hero-section .lead-text {
@@ -1128,19 +1175,19 @@ body.no-scroll .menu-overlay {
     }
 
     .content-card h3 {
-        font-size: 1.5rem;
+        font-size: 1.4rem; /* Ajustado para menor em telas menores */
     }
 
     .project-card h3 {
-        font-size: 1.6rem;
+        font-size: 1.5rem; /* Ajustado para menor em telas menores */
     }
 
     .info-item-card h3 {
-        font-size: 1.6rem;
+        font-size: 1.5rem; /* Ajustado para menor em telas menores */
     }
 
     .team-member-card h3 {
-        font-size: 1.4rem;
+        font-size: 1.3rem; /* Ajustado para menor em telas menores */
     }
 }
 
@@ -1162,7 +1209,7 @@ body.no-scroll .menu-overlay {
     }
 
     .hero-content h1 {
-        font-size: 2.8rem;
+        font-size: 2.5rem; /* Ajustado para menor em telas menores */
     }
 
     .hero-content .lead-text {
@@ -1175,8 +1222,6 @@ body.no-scroll .menu-overlay {
         font-size: 0.9rem;
     }
 
-    @media (max-width: 768px) {
-    @media (max-width: 768px) {
     .carousel-slide {
         height: 340px !important;
         min-width: 100vw !important;
@@ -1212,22 +1257,13 @@ body.no-scroll .menu-overlay {
         line-height: 1.4;
         word-break: break-word !important;
     }
-}
-}
-    .slide-content h3 {
-        font-size: 1.8rem;
-    }
-
-    .slide-content p {
-        font-size: 0.9rem;
-    }
 
     .section-padding {
         padding: 60px 0;
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem; /* Ajustado para menor em telas menores */
     }
 
     .section-description {
@@ -1263,7 +1299,7 @@ body.no-scroll .menu-overlay {
     }
 
     .footer-grid h3 {
-        font-size: 1.2rem;
+        font-size: 1.1rem; /* Ajustado para menor em telas menores */
     }
 
     .footer-grid p, .footer-grid ul li {
@@ -1280,15 +1316,11 @@ body.no-scroll .menu-overlay {
     }
 
     .page-hero-section h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem; /* Ajustado para menor em telas menores */
     }
 
     .page-hero-section .lead-text {
         font-size: 1.0rem;
-    }
-
-    .content-section {
-        padding: 60px 20px;
     }
 
     .content-card h3 {
@@ -1323,7 +1355,7 @@ body.no-scroll .menu-overlay {
     }
 
     .hero-content h1 {
-        font-size: 2rem;
+        font-size: 1.8rem; /* Ajustado para menor em telas menores */
     }
 
     .hero-content .lead-text {
@@ -1336,20 +1368,17 @@ body.no-scroll .menu-overlay {
         gap: 10px;
     }
 
-
     .btn.btn-slide {
         padding: 8px 18px;
         font-size: 0.85rem;
     }
-
-
 
     .section-padding {
         padding: 40px 0;
     }
 
     .section-title {
-        font-size: 1.8rem;
+        font-size: 1.6rem; /* Ajustado para menor em telas menores */
         margin-bottom: 15px;
     }
 
@@ -1384,8 +1413,7 @@ body.no-scroll .menu-overlay {
     .main-footer {
         padding: 30px 0 10px;
     }
-}
-@media (max-width: 576px) {
+
     .carousel-slide {
         height: 320px !important;
         min-width: 100vw !important;
@@ -1432,25 +1460,20 @@ body.no-scroll .menu-overlay {
     font-size: 28px;
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
     z-index: 1000;
-    /* Certifica que o display é flex e os itens são centralizados */
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Remove sublinhado se o traço for um */
     text-decoration: none; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* Adicione estas linhas se o traço for uma borda interna */
     border: none;
     outline: none;
 }
 
 .whatsapp-float i {
-    /* Garante que o ícone preencha o espaço e não gere traços */
-    display: block; /* Ou display: flex; se for mais de um item no <i> */
-    line-height: 1; /* Ajuda a alinhar verticalmente o texto/ícone */
-    margin: 0; /* Remove qualquer margem padrão */
-    padding: 0; /* Remove qualquer padding padrão */
-    /* Se for um traço de cor, assegure a cor */
+    display: block; 
+    line-height: 1; 
+    margin: 0; 
+    padding: 0; 
     color: #FFF; 
 }
 

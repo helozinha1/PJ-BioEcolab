@@ -1,15 +1,15 @@
 /*
-  entrevista.css
-
-  Este arquivo contém estilos específicos para a página de Entrevista (entrevista.html).
-  Ele é carregado APÓS o style.css global, permitindo definir layouts e estilos únicos
-  para as seções desta página, mantendo a consistência visual geral.
+ * entrevista.css
+ *
+ * Este arquivo contém estilos específicos para a página de Entrevista (entrevista.html).
+ * Ele é carregado APÓS o style.css global, permitindo definir layouts e estilos únicos
+ * para as seções desta página, mantendo a consistência visual geral.
 */
 
 /* --- Estilo para a Seção Hero da Página de Entrevista --- */
 .page-hero-entrevista {
     /* Fundo verde vibrante para o hero da página de entrevista */
-    background: var(--gradient-medium-green-bg); 
+    background: var(--gradient-medium-green-bg);
     background-size: cover;
     background-position: center;
     /* O hero-overlay e hero-content são estilos globais do style.css */
@@ -28,7 +28,7 @@
 /* Títulos e descrições específicos para a página de entrevista */
 .entrevista-section-title {
     font-family: var(--font-heading);
-    font-size: 2.6rem;
+    font-size: 2.2rem; /* Reduzido de 2.6rem para 2.2rem */
     font-weight: 700;
     color: var(--color-dark-green); /* Títulos em verde escuro */
     text-align: center;
@@ -79,7 +79,7 @@
 /* Título de subseção (ex: "Interessado em mais projetos?") */
 .subsection-title {
     font-family: var(--font-heading);
-    font-size: 1.8rem;
+    font-size: 1.6rem; /* Reduzido de 1.8rem para 1.6rem */
     font-weight: 600;
     color: var(--color-dark-green);
     margin-bottom: 15px;
@@ -88,7 +88,7 @@
 /* --- Responsividade para entrevista.css --- */
 @media (max-width: 992px) {
     .entrevista-section-title {
-        font-size: 2.2rem;
+        font-size: 2.0rem; /* Ajustado para 2.0rem */
     }
     .entrevista-description {
         font-size: 1rem;
@@ -97,13 +97,13 @@
         max-width: 700px; /* Reduz a largura máxima do vídeo em tablets */
     }
     .subsection-title {
-        font-size: 1.6rem;
+        font-size: 1.5rem; /* Ajustado para 1.5rem */
     }
 }
 
 @media (max-width: 768px) {
     .entrevista-section-title {
-        font-size: 1.8rem;
+        font-size: 1.7rem; /* Ajustado para 1.7rem */
     }
     .entrevista-description {
         font-size: 0.9rem;
@@ -115,7 +115,7 @@
         border-radius: 0; /* Remove border-radius em mobile para telas cheias */
     }
     .subsection-title {
-        font-size: 1.4rem;
+        font-size: 1.3rem; /* Ajustado para 1.3rem */
     }
 }
 
@@ -124,7 +124,7 @@
         padding: 30px 15px;
     }
     .entrevista-section-title {
-        font-size: 1.5rem;
+        font-size: 1.4rem; /* Ajustado para 1.4rem */
         margin-bottom: 15px;
     }
     .entrevista-section-title::after {
@@ -139,6 +139,6 @@
         margin-bottom: 25px;
     }
     .subsection-title {
-        font-size: 1.2rem;
+        font-size: 1.1rem; /* Ajustado para 1.1rem */
     }
 }

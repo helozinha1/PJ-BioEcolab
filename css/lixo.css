@@ -1,15 +1,15 @@
 /*
-  lixo.css
-
-  Este arquivo contém estilos específicos para a página de Resíduos & Reciclagem (lixo.html).
-  Ele é carregado APÓS o style.css global, permitindo definir layouts e estilos únicos
-  para as seções desta página, mantendo a consistência visual geral.
+ * lixo.css
+ *
+ * Este arquivo contém estilos específicos para a página de Resíduos & Reciclagem (lixo.html).
+ * Ele é carregado APÓS o style.css global, permitindo definir layouts e estilos únicos
+ * para as seções desta página, mantendo a consistência visual geral.
 */
 
 /* --- Estilo para a Seção Hero da Página de Resíduos --- */
 .page-hero-lixo {
     /* Fundo verde vibrante para o hero da página de resíduos */
-    background: var(--gradient-medium-green-bg); 
+    background: var(--gradient-medium-green-bg);
     background-size: cover;
     background-position: center;
     /* O hero-overlay e hero-content são estilos globais do style.css */
@@ -28,7 +28,7 @@
 /* Títulos e descrições personalizados para a página de resíduos */
 .residuos-section-title {
     font-family: var(--font-heading);
-    font-size: 2.6rem;
+    font-size: 2.2rem; /* Reduzido de 2.6rem para 2.2rem */
     font-weight: 700;
     color: var(--color-dark-green); /* Títulos em verde escuro */
     text-align: center;
@@ -90,7 +90,7 @@
 }
 
 .waste-icon {
-    font-size: 3.5rem;
+    font-size: 3.2rem; /* Reduzido de 3.5rem para 3.2rem */
     color: var(--color-primary-green);
     margin-bottom: 20px;
     transition: color var(--transition-speed) ease;
@@ -102,7 +102,7 @@
 
 .waste-type-card h3 {
     font-family: var(--font-heading);
-    font-size: 1.6rem;
+    font-size: 1.5rem; /* Reduzido de 1.6rem para 1.5rem */
     font-weight: 600;
     color: var(--color-text-dark);
     margin-bottom: 10px;
@@ -172,14 +172,14 @@
     color: var(--color-white);
     border-radius: 50%;
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.4rem; /* Reduzido de 1.5rem para 1.4rem */
     font-weight: 700;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .recycle-step-item .step-content h4 {
     font-family: var(--font-heading);
-    font-size: 1.4rem;
+    font-size: 1.3rem; /* Reduzido de 1.4rem para 1.3rem */
     font-weight: 600;
     color: var(--color-dark-green);
     margin-bottom: 8px;
@@ -226,7 +226,7 @@
 }
 
 .plastic-icon {
-    font-size: 3.5rem;
+    font-size: 3.2rem; /* Reduzido de 3.5rem para 3.2rem */
     color: var(--color-primary-green);
     margin-bottom: 20px;
     transition: color var(--transition-speed) ease;
@@ -238,7 +238,7 @@
 
 .plastic-info-card h3 {
     font-family: var(--font-heading);
-    font-size: 1.6rem;
+    font-size: 1.5rem; /* Reduzido de 1.6rem para 1.5rem */
     font-weight: 600;
     color: var(--color-text-dark);
     margin-bottom: 10px;
@@ -275,7 +275,7 @@
 
 .plastic-substitution-list .subsection-title {
     font-family: var(--font-heading);
-    font-size: 1.8rem;
+    font-size: 1.6rem; /* Reduzido de 1.8rem para 1.6rem */
     font-weight: 600;
     color: var(--color-dark-green);
     margin-bottom: 20px;
@@ -321,7 +321,7 @@
 /* --- Responsividade para lixo.css --- */
 @media (max-width: 992px) {
     .residuos-section-title {
-        font-size: 2.2rem;
+        font-size: 2.0rem; /* Ajustado para 2.0rem */
     }
     .residuos-description {
         font-size: 1rem;
@@ -341,11 +341,11 @@
     }
     .waste-icon,
     .plastic-icon {
-        font-size: 3rem;
+        font-size: 2.8rem; /* Ajustado para 2.8rem */
     }
     .waste-type-card h3,
     .plastic-info-card h3 {
-        font-size: 1.4rem;
+        font-size: 1.3rem; /* Ajustado para 1.3rem */
     }
     .recycle-step-item {
         padding: 15px 20px;
@@ -366,7 +366,7 @@
         padding: 25px;
     }
     .plastic-substitution-list .subsection-title {
-        font-size: 1.6rem;
+        font-size: 1.5rem; /* Ajustado para 1.5rem */
     }
     .plastic-substitution-list ul li {
         font-size: 0.95rem;
@@ -375,7 +375,7 @@
 
 @media (max-width: 768px) {
     .residuos-section-title {
-        font-size: 1.8rem;
+        font-size: 1.7rem; /* Ajustado para 1.7rem */
     }
     .waste-types-grid,
     .plastic-info-grid {
@@ -416,7 +416,7 @@
         padding: 30px 0;
     }
     .residuos-section-title {
-        font-size: 1.5rem;
+        font-size: 1.4rem; /* Ajustado para 1.4rem */
         margin-bottom: 15px;
     }
     .residuos-section-title::after {
@@ -432,12 +432,12 @@
     }
     .waste-icon,
     .plastic-icon {
-        font-size: 2.5rem;
+        font-size: 2.3rem; /* Ajustado para 2.3rem */
         margin-bottom: 15px;
     }
     .waste-type-card h3,
     .plastic-info-card h3 {
-        font-size: 1.2rem;
+        font-size: 1.1rem; /* Ajustado para 1.1rem */
     }
     .waste-type-card p,
     .plastic-info-card p {
@@ -455,7 +455,7 @@
         padding: 20px;
     }
     .plastic-substitution-list .subsection-title {
-        font-size: 1.4rem;
+        font-size: 1.3rem; /* Ajustado para 1.3rem */
     }
     .plastic-substitution-list ul li {
         font-size: 0.85rem;

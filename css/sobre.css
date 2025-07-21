@@ -1,15 +1,15 @@
 /*
-  sobre.css
-
-  Este arquivo contém estilos específicos para a página "Sobre Nós" (sobre.html).
-  Ele é carregado APÓS o style.css global, permitindo definir layouts e estilos únicos
-  para as seções de apresentação das equipes, mantendo a consistência visual geral.
+ * sobre.css
+ *
+ * Este arquivo contém estilos específicos para a página "Sobre Nós" (sobre.html).
+ * Ele é carregado APÓS o style.css global, permitindo definir layouts e estilos únicos
+ * para as seções de apresentação das equipes, mantendo a consistência visual geral.
 */
 
 /* --- Estilo para a Seção Hero da Página Sobre Nós --- */
 .page-hero-sobre {
     /* Fundo verde vibrante para o hero da página */
-    background: var(--gradient-medium-green-bg); 
+    background: var(--gradient-medium-green-bg);
     background-size: cover;
     background-position: center;
     /* O hero-overlay e hero-content são estilos globais do style.css */
@@ -27,7 +27,7 @@
 
 .about-us-section-title {
     font-family: var(--font-heading);
-    font-size: 2.6rem;
+    font-size: 2.2rem; /* Reduzido de 2.6rem para 2.2rem */
     font-weight: 700;
     color: var(--color-dark-green); /* Títulos em verde escuro */
     text-align: center;
@@ -61,7 +61,7 @@
 
 .team-group-title {
     font-family: var(--font-heading);
-    font-size: 2.4rem;
+    font-size: 2.0rem; /* Reduzido de 2.4rem para 2.0rem */
     font-weight: 700;
     color: var(--color-dark-green);
     text-align: center;
@@ -112,7 +112,7 @@
 
 .team-group-card h4 {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.3rem; /* Reduzido de 1.5rem para 1.3rem */
     font-weight: 600;
     color: var(--color-dark-green);
     margin-bottom: 15px;
@@ -146,13 +146,13 @@
 /* --- Responsividade para sobre.css --- */
 @media (max-width: 992px) {
     .about-us-section-title {
-        font-size: 2.2rem;
+        font-size: 2.0rem; /* Ajustado para 2.0rem */
     }
     .about-us-description {
         font-size: 1rem;
     }
     .team-group-title {
-        font-size: 2rem;
+        font-size: 1.8rem; /* Ajustado para 1.8rem */
     }
     .team-group-description {
         font-size: 0.95rem;
@@ -165,7 +165,7 @@
         padding: 20px;
     }
     .team-group-card h4 {
-        font-size: 1.3rem;
+        font-size: 1.2rem; /* Ajustado para 1.2rem */
     }
     .team-group-card ul li {
         font-size: 0.85rem;
@@ -174,14 +174,14 @@
 
 @media (max-width: 768px) {
     .about-us-section-title {
-        font-size: 1.8rem;
+        font-size: 1.7rem; /* Ajustado para 1.7rem */
     }
     .about-us-description {
         font-size: 0.9rem;
         margin-bottom: 20px;
     }
     .team-group-title {
-        font-size: 1.6rem;
+        font-size: 1.5rem; /* Ajustado para 1.5rem */
     }
     .team-group-description {
         font-size: 0.85rem;
@@ -189,11 +189,11 @@
     }
     .team-groups-grid {
         grid-template-columns: 1fr; /* Uma coluna em telas menores */
-        gap: 20px;
+        max-width: 350px; /* Limita largura em telas menores */
+        margin: 0 auto; /* Centraliza o card em telas menores */
     }
     .team-group-card {
-        max-width: 350px; /* Limita largura em telas menores */
-        margin: 0 auto;
+        padding: 20px;
     }
 }
 
@@ -203,18 +203,18 @@
         padding: 40px 15px;
     }
     .about-us-section-title {
-        font-size: 1.5rem;
+        font-size: 1.4rem; /* Ajustado para 1.4rem */
         margin-bottom: 15px;
     }
     .about-us-description {
         font-size: 0.8rem;
     }
     .team-group-title {
-        font-size: 1.4rem;
+        font-size: 1.3rem; /* Ajustado para 1.3rem */
         margin-bottom: 20px;
     }
     .team-group-card h4 {
-        font-size: 1.2rem;
+        font-size: 1.1rem; /* Ajustado para 1.1rem */
     }
     .team-group-card ul li {
         font-size: 0.8rem;

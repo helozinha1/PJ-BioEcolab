@@ -1,9 +1,9 @@
 /*
-  preservacao.css
-
-  Este arquivo contém estilos totalmente dedicados à página de Preservação e Conservação (preservacao.html).
-  Ele é carregado APÓS o style.css global, o que permite definir estilos específicos
-  e layouts para os elementos desta página sem afetar outras, mantendo a consistência visual.
+ * preservacao.css
+ *
+ * Este arquivo contém estilos totalmente dedicados à página de Preservação e Conservação (preservacao.html).
+ * Ele é carregado APÓS o style.css global, o que permite definir estilos específicos
+ * e layouts para os elementos desta página sem afetar outras, mantendo a consistência visual.
 */
 
 /* --- Estilos para a Seção de Introdução (preservation-intro-section) --- */
@@ -17,13 +17,13 @@
     margin-bottom: 40px;
     border: 1px solid var(--color-border);
     /* Garante que o texto dentro desta seção seja escuro para legibilidade máxima */
-    color: var(--color-text-dark); 
+    color: var(--color-text-dark);
 }
 
 /* Reutilizando e ajustando títulos e descrições para a página */
 .pres-section-title {
     font-family: var(--font-heading);
-    font-size: 2.6rem;
+    font-size: 2.2rem; /* Reduzido de 2.6rem para 2.2rem */
     font-weight: 700;
     color: var(--color-dark-green); /* Títulos em verde escuro */
     text-align: center;
@@ -43,7 +43,7 @@
 
 .pres-description {
     font-size: 1.1rem;
-    color: var(--color-text-high); /* Descrição em tom médio para boa legibilidade */
+    color: var(--color-text-medium); /* Alterado para var(--color-text-medium) para consistência */
     max-width: 850px;
     margin: 0 auto 30px;
     text-align: justify;
@@ -77,19 +77,19 @@
     align-items: center;
     justify-content: center;
     /* Garante que o texto padrão no card branco seja escuro */
-    color: var(--color-text-dark); 
+    color: var(--color-text-dark);
 }
 
 .pillar-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
     /* Degradê verde médio no hover (escuro o suficiente para texto branco) */
-    background: var(--gradient-medium-green-bg); 
+    background: var(--gradient-medium-green-bg);
     color: var(--color-white); /* Texto branco no hover */
 }
 
 .pillar-icon {
-    font-size: 3.8rem;
+    font-size: 3.5rem; /* Reduzido de 3.8rem para 3.5rem */
     color: var(--color-primary-green); /* Ícone verde primário */
     margin-bottom: 20px;
     transition: color var(--transition-speed) ease;
@@ -101,7 +101,7 @@
 
 .pillar-card h3 {
     font-family: var(--font-heading);
-    font-size: 1.6rem;
+    font-size: 1.5rem; /* Reduzido de 1.6rem para 1.5rem */
     font-weight: 600;
     color: var(--color-text-dark); /* Título escuro */
     margin-bottom: 10px;
@@ -135,7 +135,7 @@
     margin-bottom: 40px;
     border: 1px solid var(--color-border);
     /* Garante que o texto dentro desta seção seja escuro */
-    color: var(--color-text-dark); 
+    color: var(--color-text-dark);
 }
 
 .threats-list {
@@ -149,14 +149,14 @@
     display: flex;
     align-items: flex-start;
     /* Fundo em degradê verde claro para o item de ameaça, texto escuro é legível aqui */
-    background: var(--gradient-light-green-bg); 
+    background: var(--gradient-light-green-bg);
     border-radius: 8px;
     padding: 20px 25px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
     border: 1px solid var(--color-border);
     /* Garante que o texto dentro do threat-item seja escuro */
-    color: var(--color-text-dark); 
+    color: var(--color-text-dark);
 }
 
 .threat-item:hover {
@@ -184,7 +184,7 @@
 
 .threat-content h3 {
     font-family: var(--font-heading);
-    font-size: 1.4rem;
+    font-size: 1.3rem; /* Reduzido de 1.4rem para 1.3rem */
     font-weight: 600;
     color: var(--color-dark-green); /* Título em verde escuro */
     margin-bottom: 8px;
@@ -203,7 +203,7 @@
 /* Esta seção usa bg-dark-green que já está definido em style.css com cor de texto branca */
 .preservation-action-section {
     /* Reforça que o texto desta seção específica seja branco, garantindo visibilidade */
-    color: var(--color-white); 
+    color: var(--color-white);
 }
 
 
@@ -216,7 +216,7 @@
 
 @media (max-width: 576px) {
     .pres-section-title {
-        font-size: 1.8rem;
+        font-size: 1.8rem; /* Ajustado de 1.8rem para manter a proporção */
     }
     .pres-description {
         font-size: 0.9rem;
@@ -231,7 +231,7 @@
         font-size: 3rem;
     }
     .pillar-card h3 {
-        font-size: 1.4rem;
+        font-size: 1.4rem; /* Ajustado de 1.4rem para manter a proporção */
     }
     .pillar-card p {
         font-size: 0.85rem;
@@ -250,7 +250,7 @@
         text-align: center;
     }
     .threat-content h3 {
-        font-size: 1.2rem;
+        font-size: 1.2rem; /* Ajustado de 1.2rem para manter a proporção */
     }
     .threat-content p {
         font-size: 0.8rem;

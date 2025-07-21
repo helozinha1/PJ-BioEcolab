@@ -1,15 +1,15 @@
 /*
-  projetos.css
-
-  Este arquivo contém estilos específicos para a página de Projetos (projetos.html).
-  Ele é carregado APÓS o style.css global, permitindo definir layouts e estilos únicos
-  para as seções de equipes e seus projetos, mantendo a consistência visual geral.
+ * projetos.css
+ *
+ * Este arquivo contém estilos específicos para a página de Projetos (projetos.html).
+ * Ele é carregado APÓS o style.css global, permitindo definir layouts e estilos únicos
+ * para as seções de equipes e seus projetos, mantendo a consistência visual geral.
 */
 
 /* --- Estilo para a Seção Hero da Página de Projetos --- */
 .page-hero-projetos {
     /* Fundo verde vibrante para o hero da página de projetos */
-    background: var(--gradient-medium-green-bg); 
+    background: var(--gradient-medium-green-bg);
     background-size: cover;
     background-position: center;
     /* O hero-overlay e hero-content são estilos globais do style.css */
@@ -28,7 +28,7 @@
 /* Títulos das seções de equipe */
 .team-section-title {
     font-family: var(--font-heading);
-    font-size: 2.5rem;
+    font-size: 2.2rem; /* Reduzido de 2.5rem para 2.2rem */
     font-weight: 700;
     color: var(--color-dark-green); /* Títulos de equipe em verde escuro */
     text-align: center;
@@ -95,7 +95,7 @@
 
 .project-card-custom h4 {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.4rem; /* Reduzido de 1.5rem para 1.4rem */
     font-weight: 600;
     color: var(--color-dark-green);
     margin-bottom: 10px;
@@ -142,7 +142,7 @@
 /* --- Responsividade para projetos.css --- */
 @media (max-width: 992px) {
     .team-section-title {
-        font-size: 2.2rem;
+        font-size: 2.0rem; /* Ajustado para 2.0rem */
     }
     .projects-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -156,7 +156,7 @@
 
 @media (max-width: 768px) {
     .team-section-title {
-        font-size: 1.8rem;
+        font-size: 1.7rem; /* Ajustado para 1.7rem */
         margin-bottom: 30px;
     }
     .projects-grid {
@@ -167,7 +167,7 @@
         height: 180px;
     }
     .project-card-custom h4 {
-        font-size: 1.3rem;
+        font-size: 1.3rem; /* Ajustado para 1.3rem */
     }
     .project-card-custom p {
         font-size: 0.85rem;
@@ -183,12 +183,12 @@
         padding: 40px 0;
     }
     .team-section-title {
-        font-size: 1.6rem;
+        font-size: 1.5rem; /* Ajustado para 1.5rem */
     }
     .project-card-custom img {
         height: 150px;
     }
     .project-card-custom h4 {
-        font-size: 1.2rem;
+        font-size: 1.2rem; /* Ajustado para 1.2rem */
     }
 }
