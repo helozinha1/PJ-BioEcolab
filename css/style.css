@@ -1447,12 +1447,13 @@ body.no-scroll .menu-overlay {
     }
 }
 /* Botão Flutuante do WhatsApp */
+/* Botão Flutuante do WhatsApp */
 .whatsapp-float {
     position: fixed;
     width: 60px;
     height: 60px;
-    bottom: 30px;
-    right: 30px;
+    bottom: 30px; /* Posição inferior do WhatsApp */
+    right: 30px; /* Alinhado à direita */
     background-color: #25D366;
     color: #FFF;
     border-radius: 50px;
@@ -1463,18 +1464,18 @@ body.no-scroll .menu-overlay {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none; 
+    text-decoration: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: none;
     outline: none;
 }
 
 .whatsapp-float i {
-    display: block; 
-    line-height: 1; 
-    margin: 0; 
-    padding: 0; 
-    color: #FFF; 
+    display: block;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    color: #FFF;
 }
 
 .whatsapp-float:hover {
@@ -1482,12 +1483,56 @@ body.no-scroll .menu-overlay {
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
 }
 
-/* Opcional: Para telas menores, ajuste o tamanho e a posição */
+/* Botão Flutuante da Calculadora de Carbono */
+.carbon-calculator-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 100px; /* Posição acima do WhatsApp (30px + 60px de altura do botão + 10px de espaçamento) */
+    right: 30px; /* Mantém o mesmo alinhamento à direita do WhatsApp */
+    background-color: #4CAF50; /* Um verde mais ecológico, ajuste se quiser */
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 28px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    border: none;
+    outline: none;
+}
+
+.carbon-calculator-float i {
+    display: block;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    color: #FFF;
+}
+
+.carbon-calculator-float:hover {
+    transform: scale(1.1);
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
+    background-color: #388E3C; /* Verde mais escuro no hover */
+}
+
+/* Opcional: Ajustes para telas menores (mobile) */
 @media (max-width: 768px) {
     .whatsapp-float {
         width: 50px;
         height: 50px;
         bottom: 20px;
+        right: 20px;
+        font-size: 24px;
+    }
+    .carbon-calculator-float {
+        width: 50px;
+        height: 50px;
+        bottom: 80px; /* Ajuste para mobile (20px + 50px de altura + 10px de espaçamento) */
         right: 20px;
         font-size: 24px;
     }

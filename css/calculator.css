@@ -1,0 +1,241 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* --- Seção da Calculadora de Carbono --- */
+#carbon-calculator-section {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+}
+
+#carbon-calculator-section h2 {
+    text-align: center;
+    color: #2C3E50;
+    margin-bottom: 25px;
+    font-size: 2.2em;
+    font-weight: bold;
+}
+
+#carbon-calculator-section > p { /* O parágrafo logo abaixo do h2 */
+    text-align: center;
+    color: #555;
+    margin-bottom: 40px;
+    font-size: 1.1em;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #34495E;
+    font-size: 1.05em;
+}
+
+.input-group input[type="number"],
+.input-group select {
+    width: calc(100% - 22px); /* Para compensar o padding e borda */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1.05em;
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura */
+}
+
+.input-group small {
+    color: #777;
+    display: block;
+    margin-top: 5px;
+    font-size: 0.9em;
+}
+
+#carbon-calculator-section button {
+    width: 100%;
+    padding: 15px 25px;
+    background-color: #28a745; /* Verde primário */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.2);
+}
+
+#carbon-calculator-section button:hover {
+    background-color: #218838; /* Verde mais escuro no hover */
+    transform: translateY(-2px); /* Efeito sutil de levantar */
+    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.3);
+}
+
+#resultado-container {
+    margin-top: 40px;
+    padding: 25px;
+    background-color: #e6ffe6; /* Fundo verde claro para o resultado */
+    border-radius: 10px;
+    border: 1px solid #a8e0a8;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+#resultado-container p {
+    font-size: 1.2em;
+    color: #2C3E50;
+    margin-bottom: 15px;
+}
+
+#resultadoPegada {
+    font-size: 3em; /* Tamanho grande para o resultado */
+    font-weight: bold;
+    color: #007bff; /* Azul vibrante para destaque */
+    margin: 0;
+    line-height: 1.2;
+}
+
+#mensagemReducao {
+    font-size: 1em;
+    color: #666;
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+
+/* --- Botões Flutuantes --- */
+
+/* Botão Flutuante do WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366; /* Verde WhatsApp */
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 28px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    outline: none;
+}
+
+.whatsapp-float i {
+    display: block;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    color: #FFF;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Botão Flutuante da Calculadora de Carbono (acima do WhatsApp) */
+.carbon-calculator-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 100px; /* Posição acima do WhatsApp (30px + 60px de altura do botão + 10px de espaçamento) */
+    right: 30px; /* Alinhado à direita com o WhatsApp */
+    background-color: #4CAF50; /* Um verde mais ecológico para a calculadora */
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 28px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    border: none;
+    outline: none;
+}
+
+.carbon-calculator-float i {
+    display: block;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    color: #FFF;
+}
+
+.carbon-calculator-float:hover {
+    transform: scale(1.1);
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
+    background-color: #388E3C; /* Verde mais escuro no hover para a calculadora */
+}
+
+/* --- Responsividade para Telas Menores --- */
+@media (max-width: 768px) {
+    /* Ajustes para a calculadora em mobile */
+    #carbon-calculator-section {
+        margin: 30px 15px;
+        padding: 20px;
+    }
+    #carbon-calculator-section h2 {
+        font-size: 1.8em;
+    }
+    #carbon-calculator-section > p {
+        font-size: 1em;
+        margin-bottom: 25px;
+    }
+    .input-group input[type="number"],
+    .input-group select,
+    #carbon-calculator-section button {
+        font-size: 1em;
+        padding: 10px;
+    }
+    #resultadoPegada {
+        font-size: 2.5em;
+    }
+    #mensagemReducao {
+        font-size: 0.9em;
+    }
+
+    /* Ajustes para os botões flutuantes em mobile */
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 24px;
+    }
+    .carbon-calculator-float {
+        width: 50px;
+        height: 50px;
+        bottom: 80px; /* Ajuste para mobile (20px do WhatsApp + 50px de altura do botão + 10px de espaçamento) */
+        right: 20px;
+        font-size: 24px;
+    }
+}

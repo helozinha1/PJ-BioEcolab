@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Pegada de Carbono - BioEcolab</title>
+    
+    <link rel="stylesheet" href="css/calculator.css">
+    <link rel="stylesheet" href="css/style.css">
+     <link rel="icon" type="image/png" href="favicon.png">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header style="background-image: linear-gradient(to right, #3A6047, #2F4D3C); padding: 20px; text-align: center; border-bottom: 1px solid #eee;">
+        <h1 style="color: #eeeaea;">BioEcolab - Sua Plataforma Ambiental</h1>
+        <p style="color: #8e9a8f;">Juntos por um futuro mais verde!</p>
+    </header>
+
+    <main style="padding: 20px;">
+        <div id="carbon-calculator-section">
+            <h2>Calcule Sua Pegada de Carbono 🌱</h2>
+            <p>Descubra o impacto de suas atividades diárias no meio ambiente e encontre formas de reduzi-lo.</p>
+
+            <div class="input-group">
+                <label for="energiaEletrica">Consumo de Energia Elétrica (kWh/mês):</label>
+                <input type="number" id="energiaEletrica" value="0" min="0">
+                <small>* Valor médio mensal da sua conta de luz.</small>
+            </div>
+
+            <div class="input-group">
+                <label for="quilometragemCarro">Quilometragem Média Percorrida de Carro (km/mês):</label>
+                <input type="number" id="quilometragemCarro" value="0" min="0">
+                <small>* Apenas para veículos a gasolina/etanol.</small>
+            </div>
+
+            <div class="input-group">
+                <label for="numeroVoos">Número de Voos Longos por Ano (ida e volta):</label>
+                <input type="number" id="numeroVoos" value="0" min="0">
+                <small>* Voos com mais de 3 horas de duração (ex: intercâmbio, viagens internacionais).</small>
+            </div>
+
+            <div class="input-group">
+                <label for="dieta">Tipo de Dieta:</label>
+                <select id="dieta">
+                    <option value="padrao">Padrão (inclui carne)</option>
+                    <option value="vegetariana">Vegetariana</option>
+                    <option value="vegana">Vegana</option>
+                </select>
+            </div>
+
+            <button onclick="calcularPegada()">Calcular Minha Pegada</button>
+
+            <div id="resultado-container">
+                <p>Sua Pegada de Carbono Anual Estimada:</p>
+                <p id="resultadoPegada">0 kg CO2e</p>
+                <p id="mensagemReducao"></p>
+            </div>
+        </div>
+    </main>
+
+    <footer style="background-image: linear-gradient(to right, #3A6047, #2F4D3C); padding: 20px; text-align: center; border-top: 1px solid #eee; margin-top: 50px; color: #eeeaea;">
+        <p>&copy; 2025 BioEcolab. Todos os direitos reservados.</p>
+    </footer>
+
+    <a href="https://wa.me/5511999998888?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20BioEcolab!" target="_blank" class="whatsapp-float" title="Converse conosco no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <a href="#carbon-calculator-section" class="carbon-calculator-float" title="Calcule sua pegada de carbono">
+        <i class="fas fa-calculator"></i>
+    </a>
+
+    <script src="js/calculator.js"></script>
+
+</body>
+</html>
