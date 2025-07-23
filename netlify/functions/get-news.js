@@ -15,7 +15,7 @@ exports.handler = async function(event, context) {
         };
     }
 
-    const query = 'desastre ambiental, meio ambiente, mudança climatica'; // Mudei de 'meio ambiente' para 'desastre ambiental' para refletir o novo foco
+    const query = 'mudança%20climatica'; // Mudei de 'meio ambiente' para 'desastre ambiental' para refletir o novo foco
     const language = 'pt';
     const sortBy = 'relevancy';
     // REMOVIDO: const fromDate = '2025-07-23'; 
