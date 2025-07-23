@@ -15,7 +15,7 @@ exports.handler = async function(event, context) {
         };
     }
 
-    const query = '(meio%20ambiente%20AND%20desastres%20naturais%20AND%20humanos)';
+    const query = 'meio%20ambiente';
     const language = 'pt';
     const sortBy = 'relevancy';
     // REMOVIDO: const fromDate = '2025-07-23'; 
