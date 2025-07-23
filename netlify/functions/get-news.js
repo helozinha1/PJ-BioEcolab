@@ -15,7 +15,7 @@ exports.handler = async function(event, context) {
         };
     }
 
-    const query = 'desastre%20natural'; // Mudei de 'meio ambiente' para 'desastre ambiental' para refletir o novo foco
+    const query = 'preservação%20ambiental'; // Mudei de 'meio ambiente' para 'desastre ambiental' para refletir o novo foco
     const language = 'pt';
     const sortBy = 'relevancy';
     // REMOVIDO: const fromDate = '2025-07-23'; 
