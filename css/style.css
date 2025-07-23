@@ -1707,32 +1707,46 @@ body.no-scroll .menu-overlay {
     transform: none;
 }
 
-/* --- Dots de Navegação --- */
+/* --- Dots de Navegação (melhorado) --- */
 .news-carousel-dots {
     text-align: center;
-    margin-top: 20px;
-    position: absolute;
-    bottom: 0; /* Posiciona na parte inferior do container */
+    margin-top: 25px; /* Aumentei um pouco a margem superior */
+    position: absolute; /* Mantém a posição absoluta */
+    bottom: 0; 
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
+    display: flex; /* Adicionado para centralizar os dots */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 30px; /* Garante uma área clicável */
+    z-index: 1; /* Garante que fiquem acima de outros elementos se houver sobreposição */
 }
 
 .news-dot {
     display: inline-block;
-    width: 10px;
-    height: 10px;
-    background-color: #ccc;
-    border-radius: 50%;
-    margin: 0 5px;
+    width: 12px; /* Ligeiramente maior */
+    height: 12px; /* Ligeiramente maior */
+    background-color: #bbbbbb; /* Cor cinza mais clara para inativo */
+    border-radius: 50%; /* Continuam redondas */
+    margin: 0 6px; /* Aumentei o espaçamento entre elas */
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease, border 0.3s ease; /* Transições suaves */
+    border: 2px solid transparent; /* Borda transparente para dar um efeito no ativo */
+}
+
+.news-dot:hover {
+    background-color: #999999; /* Um pouco mais escuro no hover */
+    transform: scale(1.1); /* Um pequeno "zoom" no hover */
 }
 
 .news-dot.active {
-    background-color: #27ae60; /* Cor ativa */
-    transform: scale(1.2);
+    background-color: #27ae60; /* Cor verde vibrante para o ativo */
+    transform: scale(1.2); /* Mais destaque para o ativo */
+    border-color: #27ae60; /* Borda da mesma cor para o ativo */
+    box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.4); /* Uma sombra suave para o ativo */
 }
+
 
 /* --- Mensagens de Carregamento/Erro --- */
 .loading-message,
