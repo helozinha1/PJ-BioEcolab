@@ -15,7 +15,7 @@ exports.handler = async function(event, context) {
         };
     }
 
-    const query = 'meio%20ambiente';
+    const query = 'natureza';
     const language = 'pt';
     const sortBy = 'relevancy';
     // REMOVIDO: const fromDate = '2025-07-23'; 
