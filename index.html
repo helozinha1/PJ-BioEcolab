@@ -20,186 +20,7 @@
 
     <header class="main-header">
         <nav class="navbar container">
-            <a href="index.h/* --- Seção de Últimas Notícias --- */
-.latest-news-section {
-    background-color: var(--color-light-green); /* Ou var(--color-white); */
-    padding: 80px 0;
-}
-
-.news-carousel-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden; /* Importante para o slide */
-    border-radius: var(--border-radius-main);
-    box-shadow: var(--box-shadow-main);
-    margin-top: 40px;
-    background-color: var(--color-white); /* Fundo dos cards dentro do carrossel */
-}
-
-.news-carousel-track {
-    display: flex;
-    transition: transform 0.6s ease-in-out; /* Transição para o movimento do carrossel */
-    white-space: nowrap; /* Impede que os itens quebrem linha */
-    padding-bottom: 20px; /* Espaço para as sombras dos cards */
-}
-
-.news-card {
-    flex: 0 0 calc(33.333% - 20px); /* 3 cards por linha no desktop, com gap */
-    width: calc(33.333% - 20px); /* Largura para 3 cards com gap */
-    margin: 10px; /* Margem entre os cards dentro do track */
-    background-color: var(--color-white);
-    border-radius: var(--border-radius-main);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* Sombra mais sutil */
-    overflow: hidden;
-    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-    display: flex;
-    flex-direction: column;
-    text-decoration: none; /* Remover sublinhado dos links */
-    color: var(--color-text-dark);
-    height: auto; /* Altura flexível para o conteúdo */
-    min-width: 300px; /* Garante que o card não fique muito pequeno */
-}
-
-.news-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-}
-
-.news-thumbnail {
-    width: 100%;
-    height: 200px; /* Altura fixa para as imagens das notícias */
-    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
-    display: block;
-}
-
-.news-card h3 {
-    font-family: var(--font-heading);
-    font-size: 1.3rem; /* Tamanho do título da notícia */
-    font-weight: 600;
-    margin: 15px 15px 10px 15px;
-    color: var(--color-text-dark);
-    line-height: 1.4;
-    text-align: left; /* Alinhar o texto à esquerda */
-}
-
-.news-card h3 a {
-    text-decoration: none;
-    color: inherit;
-    transition: color var(--transition-speed) ease;
-}
-
-.news-card h3 a:hover {
-    color: var(--color-primary-green);
-}
-
-.news-date {
-    font-size: 0.85rem;
-    color: var(--color-text-medium);
-    margin: 0 15px 10px 15px;
-    text-align: left;
-}
-
-.news-excerpt {
-    font-size: 0.95rem;
-    color: var(--color-text-medium);
-    margin: 0 15px 20px 15px;
-    line-height: 1.6;
-    flex-grow: 1; /* Garante que o texto ocupe o espaço disponível */
-    text-align: left;
-}
-
-.read-more {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 15px;
-    font-family: var(--font-heading);
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 50px;
-    transition: all var(--transition-speed) ease;
-    cursor: pointer;
-    border: 1px solid var(--color-primary-green);
-    color: var(--color-primary-green);
-    background-color: var(--color-white);
-    margin: 0 15px 15px 15px;
-    align-self: flex-start; /* Alinha o botão à esquerda */
-}
-
-.read-more i {
-    margin-left: 8px;
-    transition: transform var(--transition-speed) ease;
-}
-
-.read-more:hover {
-    background: var(--gradient-medium-green-bg);
-    color: var(--color-white);
-    transform: translateY(-2px);
-    border-color: transparent;
-}
-
-.read-more:hover i {
-    transform: translateX(3px);
-}
-
-/* Navegação do Carrossel de Notícias (Setas) */
-.carousel-nav-buttons {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10px;
-    pointer-events: none; /* Permite clicar nos cards através dos botões */
-    z-index: 10;
-}
-
-.prev-news, .next-news {
-    background-color: rgba(0, 0, 0, 0.4);
-    color: var(--color-white);
-    border: none;
-    padding: 12px 15px;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
-    pointer-events: auto; /* Reativa o clique nos botões */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.prev-news:hover, .next-news:hover {
-    background-color: rgba(0, 0, 0, 0.6);
-    transform: scale(1.1);
-}
-
-.prev-news {
-    margin-left: -25px; /* Ajuste para sair um pouco da borda do container */
-}
-
-.next-news {
-    margin-right: -25px; /* Ajuste para sair um pouco da borda do container */
-}
-
-/* Responsividade para Notícias */
-@media (max-width: 992px) {
-    .news-card {
-        flex: 0 0 calc(50% - 20px); /* 2 cards por linha */
-        width: calc(50% - 20px);
-    }
-}
-
-@media (max-width: 768px) {
-    .news-card {
-        flex: 0 0 calc(100% - 20px); /* 1 card por linha */
-        width: calc(100% - 20px);
-    }
-    .prev-news, .next-news {
-        padding: 10px 12px;
-        font-size: 1rem;
-    }
-}tml" class="logo">Bio EcoLab</a>
+            <a href="index.html" class="logo">Bio EcoLab</a>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="preservacao.html">Preservação</a></li>
@@ -229,6 +50,24 @@
                 </div>
             </div>
         </section>
+        <section id="latest-news" class="latest-news-section section-padding">
+    <div class="container">
+        <h2 class="section-title">Últimas Notícias e Artigos</h2>
+        <p class="section-description">Mantenha-se atualizado com as novidades mais recentes sobre sustentabilidade, meio ambiente e iniciativas verdes.</p>
+
+        <div class="news-carousel-container">
+            <div class="news-carousel-track" id="newsCarouselTrack">
+                <p class="loading-message">Carregando notícias...</p> 
+            </div>
+            <div class="carousel-nav-buttons">
+                <button class="prev-news" id="prevNewsBtn"><i class="fas fa-chevron-left"></i></button>
+                <button class="next-news" id="nextNewsBtn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="news-carousel-dots" id="newsCarouselDots">
+                </div>
+        </div>
+    </div>
+</section>
 
         <section class="carousel-section container section-padding" data-aos="fade-up" data-aos-delay="200">
             <h2 class="section-title">Em Destaque no Bio EcoLab</h2>
@@ -350,6 +189,5 @@
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/news-carousel.js"></script> 
 </body>
 </html>

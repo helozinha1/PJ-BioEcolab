@@ -1537,3 +1537,265 @@ body.no-scroll .menu-overlay {
         font-size: 24px;
     }
 }
+/* --- Seção de Últimas Notícias (Carrossel) --- */
+
+/* Ajustes gerais da seção */
+.latest-news-section {
+    padding: 60px 20px; /* Padding padrão para a seção */
+    background-color: #f9f9f9; /* Um fundo suave para destacar a seção */
+}
+
+.latest-news-section .section-title {
+    text-align: center;
+    font-size: 2.2em; /* Tamanho do título da seção */
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.latest-news-section .section-description {
+    text-align: center;
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 800px; /* Limita a largura para melhor leitura */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Container do Carrossel */
+.news-carousel-container {
+    position: relative; /* Para posicionar os botões de navegação */
+    overflow: hidden; /* Garante que os cards fora da view fiquem escondidos */
+    width: 100%;
+    margin: 0 auto; /* Centraliza o container */
+    padding-bottom: 40px; /* Espaço para os dots de navegação */
+}
+
+/* Track dos Cards (onde os cards se movem) */
+.news-carousel-track {
+    display: flex; /* Permite que os cards fiquem lado a lado */
+    transition: transform 0.3s ease-in-out; /* Suaviza a transição entre os slides */
+    will-change: transform; /* Otimização para animação */
+    padding: 10px 0; /* Pequeno padding vertical */
+}
+
+/* Card de Notícia Individual (Mobile First) */
+.news-card {
+    flex: 0 0 100%; /* Cada card ocupa 100% da largura do track no mobile */
+    max-width: 100%; /* Garante que não exceda 100% */
+    margin: 0 10px; /* Margem horizontal entre os cards */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra suave */
+    overflow: hidden; /* Esconde partes da imagem ou texto que excedam */
+    display: flex; /* Para flex-direction: column dentro do card */
+    flex-direction: column;
+    text-decoration: none; /* Remove sublinhado de links */
+    color: inherit; /* Herda a cor do texto */
+}
+
+.news-card .news-thumbnail {
+    width: 100%;
+    height: 200px; /* Altura fixa para as imagens no mobile */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.news-card .card-content {
+    padding: 20px;
+    flex-grow: 1; /* Faz o conteúdo ocupar o espaço restante */
+    display: flex;
+    flex-direction: column;
+}
+
+.news-card h3 {
+    font-size: 1.4em;
+    color: #2c3e50; /* Cor escura para o título */
+    margin-bottom: 10px;
+}
+
+.news-card h3 a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.news-card h3 a:hover {
+    color: #3498db; /* Cor no hover */
+}
+
+.news-card .news-date {
+    font-size: 0.9em;
+    color: #7f8c8d; /* Cor cinza para a data */
+    margin-bottom: 10px;
+}
+
+.news-card .news-date i {
+    margin-right: 5px;
+}
+
+.news-card .news-excerpt {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Permite que o excerpt ocupe mais espaço */
+}
+
+.news-card .read-more {
+    display: inline-block;
+    color: #27ae60; /* Cor verde para o link "Ler Mais" */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95em;
+    transition: color 0.3s ease;
+    margin-top: auto; /* Empurra o link para baixo no card */
+}
+
+.news-card .read-more:hover {
+    color: #2ecc71;
+}
+
+.news-card .read-more i {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.news-card .read-more:hover i {
+    transform: translateX(3px); /* Pequena animação no hover */
+}
+
+/* --- Botões de Navegação do Carrossel --- */
+.carousel-nav-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 10px; /* Espaço nas laterais */
+    pointer-events: none; /* Permite clicar nos cards mesmo com os botões por cima */
+}
+
+.carousel-nav-buttons button {
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    color: #fff;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 50%; /* Botão circular */
+    cursor: pointer;
+    font-size: 1.2em;
+    z-index: 10; /* Garante que fiquem acima dos cards */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    pointer-events: all; /* Ativa o clique nos botões */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Tamanho fixo */
+    height: 40px; /* Tamanho fixo */
+}
+
+.carousel-nav-buttons button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.05);
+}
+
+.carousel-nav-buttons button:disabled {
+    background-color: rgba(0, 0, 0, 0.2);
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* --- Dots de Navegação --- */
+.news-carousel-dots {
+    text-align: center;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 0; /* Posiciona na parte inferior do container */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+.news-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.news-dot.active {
+    background-color: #27ae60; /* Cor ativa */
+    transform: scale(1.2);
+}
+
+/* --- Mensagens de Carregamento/Erro --- */
+.loading-message,
+.no-news-message,
+.error-message {
+    text-align: center;
+    padding: 30px;
+    font-size: 1.2em;
+    color: #777;
+    width: 100%; /* Ocupa toda a largura do track */
+}
+
+.loading-message {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+
+/* --- Media Queries para Responsividade --- */
+
+/* Tablet View (2 cards por vez) */
+@media screen and (min-width: 577px) {
+    .news-card {
+        flex: 0 0 calc(50% - 20px); /* 2 cards por linha, considerando 10px de margin em cada lado (total 20px) */
+        max-width: calc(50% - 20px);
+    }
+
+    .news-card .news-thumbnail {
+        height: 180px; /* Ajusta a altura da imagem para tablets */
+    }
+
+    .carousel-nav-buttons button {
+        padding: 15px 18px; /* Botões um pouco maiores */
+        width: 45px;
+        height: 45px;
+        font-size: 1.4em;
+    }
+}
+
+/* Desktop View (3 cards por vez) */
+@media screen and (min-width: 993px) {
+    .news-card {
+        flex: 0 0 calc(33.333% - 20px); /* 3 cards por linha */
+        max-width: calc(33.333% - 20px);
+    }
+
+    .news-card .news-thumbnail {
+        height: 220px; /* Ajusta a altura da imagem para desktop */
+    }
+
+    .carousel-nav-buttons button {
+        padding: 18px 20px; /* Botões ainda maiores para desktop */
+        width: 50px;
+        height: 50px;
+        font-size: 1.6em;
+    }
+
+    .news-carousel-container {
+        max-width: 1200px; /* Limita a largura máxima do carrossel em telas grandes */
+    }
+}
